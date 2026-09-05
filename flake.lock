@@ -44,11 +44,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788512939,
-        "narHash": "sha256-l6iazr+GrNjngoblHpssdwNO6JLj54sacvpOTz4gb/M=",
+        "lastModified": 1788623218,
+        "narHash": "sha256-cLEQVQFa7kpcEFAUZBTqlFigRRCHCULoI77P9AyumAs=",
         "ref": "refs/heads/main",
-        "rev": "8dc823c0e815bb2a7fe6aecae5a2ab50d521c278",
-        "revCount": 105,
+        "rev": "63ed80d667f72cda010b058cb7166e8b50e7e5e3",
+        "revCount": 106,
         "type": "git",
         "url": "https://git.starrytea.cc/Constellation-Project/Horologium.git"
       },
