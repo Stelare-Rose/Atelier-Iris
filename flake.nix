@@ -18,6 +18,49 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs: {
-  };
+  outputs = {nixpkgs, nixpkgs-unstable, ...}@inputs: 
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system; 
+        config.allowUnfree = true;
+        config.android_sdk.accept_license = true;
+      };
+      unstable = import nixpkgs-unstable {
+        inherit system; 
+        config.allowUnfree = true;
+      };
+
+      # Args
+      ctx = {
+        inherit
+        inputs
+        unstable
+        ;
+      };
+    in
+      {
+      # Temporary Pyxis-MVP import
+      # TODO: Swap Pyxis to a Flake
+      packages.${system}.pyxis = pkgs.callPackage /home/Stelare/Sync/Programming/Git/Pyxis/default.nix { };
+      nixosConfigurations.Selene = nixpkgs.lib.nixosSystem {
+        specialArgs = ctx;
+        modules = [
+          hosts/selene/default.nix
+        ];
+      };
+      nixosConfigurations.Crescent = nixpkgs.lib.nixosSystem {
+        specialArgs = ctx;
+        modules = [
+          # Host here.
+        ];
+      };
+      # Server Configuration, Doesn't use Default.
+      nixosConfigurations.Copernicus = nixpkgs.lib.nixosSystem {
+        specialArgs = ctx;
+        modules = [
+          
+        ];
+      };
+    };
 }
