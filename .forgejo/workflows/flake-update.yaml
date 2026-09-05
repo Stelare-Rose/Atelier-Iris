@@ -1,6 +1,8 @@
 name: Flake Update
 
 on:
+  schedule:
+    - cron: "0 3 * * 1"
   workflow_dispatch: {}
 
 jobs:
@@ -11,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.REPO_PUSH_TOKEN }}
 
       - name: Update flake.lock
         run: nix flake update
@@ -27,7 +30,7 @@ jobs:
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
-          git config user.name "forgejo-actions@Copernicus"
+          git config user.name "[Au]@Copernicus"
           git config user.email "stelare-rose@noreply.git.starrytea.cc"
           git add flake.lock
           git commit -m "[Automated] Chore: Update flake.lock"
