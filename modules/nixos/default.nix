@@ -5,5 +5,6 @@
     ./audio
     ./user
     ./desktop
+    ./boot
   ];
 }

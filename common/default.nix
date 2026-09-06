@@ -15,6 +15,7 @@ in
   modules.desktop.enable = true;
   modules.virtualisation.enable = true;
   modules.user.enable = true;
+  modules.boot.enable = true;
 
 	system.stateVersion = "24.05"; 
 }
