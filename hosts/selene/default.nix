@@ -1,4 +1,4 @@
-{ ctx, ... }:
+{ ... }:
 {
   imports = [
     ../../common/default.nix
