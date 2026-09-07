@@ -18,7 +18,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = {nixpkgs, nixpkgs-unstable, ...}@inputs: 
+  outputs = {
+    self, 
+    nixpkgs, 
+    nixpkgs-unstable, 
+    home-manager, 
+    horologium, 
+    ... }@inputs: 
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -37,30 +43,28 @@
         inputs
         unstable
         ;
+        root = self;
+      };
+
+      modules = [
+        home-manager.nixosModules.default
+        horologium.nixosModules.default
+      ];
+
+      # Helper Methods
+      mkHost = path: nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit ctx; };
+        modules = path ++ modules;
       };
     in
       {
       # Temporary Pyxis-MVP import
       # TODO: Swap Pyxis to a Flake
       packages.${system}.pyxis = pkgs.callPackage /home/Stelare/Sync/Programming/Git/Pyxis/default.nix { };
-      nixosConfigurations.Selene = nixpkgs.lib.nixosSystem {
-        specialArgs = ctx;
-        modules = [
-          hosts/selene/default.nix
-        ];
-      };
-      nixosConfigurations.Crescent = nixpkgs.lib.nixosSystem {
-        specialArgs = ctx;
-        modules = [
-          # Host here.
-        ];
-      };
+      nixosConfigurations.Selene = mkHost [ ./hosts/selene ];
+      nixosConfigurations.Crescent = mkHost [ ]; 
+
       # Server Configuration, Doesn't use Default.
-      nixosConfigurations.Copernicus = nixpkgs.lib.nixosSystem {
-        specialArgs = ctx;
-        modules = [
-          
-        ];
-      };
+      nixosConfigurations.Copernicus = mkHost [ ];
     };
 }
