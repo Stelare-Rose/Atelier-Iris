@@ -19,6 +19,7 @@ in
       environment.systemPackages = with pkgs; [
         virt-manager
       ];
+      systemd.services.libvirtd.wantedBy = lib.mkForce [];
     })
   ];
 }
