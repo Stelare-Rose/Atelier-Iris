@@ -11,6 +11,11 @@ in
     ../modules/nixos
   ];
 
+	services.xserver.xkb = lib.mkDefault {
+		layout = "us";
+		variant = "";
+	};
+
   modules.audio.enable = lib.mkDefault true;
   modules.desktop.enable = lib.mkDefault true;
   modules.virtualisation.enable = lib.mkDefault true;
