@@ -13,25 +13,25 @@ in
       }];
     })
     (lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      steamcmd
-      umu-launcher
-      prismlauncher
-      gamemode
-      parsec-bin
-      wineWow64Packages.full
-      faudio # Needed for Proton and Wine
-      dxvk
+      environment.systemPackages = with pkgs; [
+        steamcmd
+        umu-launcher
+        prismlauncher
+        gamemode
+        parsec-bin
+        wineWow64Packages.full
+        faudio # Needed for Proton and Wine
+        dxvk
+      ];
+      programs.gamescope.enable = true;
       # TODO: Look into refactoring with nix-flatpak (github:gmodena/nix-flatpak)
-      flatpak # Included for Sober
-    ];
-    programs.gamescope.enable = true;
-    programs.steam = {
-      enable = true;
-      extraCompatPackages = [
-        unstable.proton-ge-bin
-      ] ++ lib.optional cfg.dawn.enable unstable.dwproton-bin;
-    };
-  })
+      services.flatpak.enable = true; # Enabled for Sober
+      programs.steam = {
+        enable = true;
+        extraCompatPackages = [
+          unstable.proton-ge-bin
+        ] ++ lib.optional cfg.dawn.enable unstable.dwproton-bin;
+      };
+    })
   ];
 }

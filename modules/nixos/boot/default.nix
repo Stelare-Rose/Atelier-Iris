@@ -2,7 +2,7 @@
 let 
   cfg = config.modules.boot;
 in
-{
+  {
   options.modules.boot.enable = lib.mkEnableOption "bootloader (GRUB)";
   config = lib.mkIf cfg.enable {
     boot.loader = {

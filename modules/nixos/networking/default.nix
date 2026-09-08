@@ -1,4 +1,4 @@
-{config, lib, ...}:
+{ config, lib, ... }:
 let
   cfg = config.modules.networking;
 in 
@@ -14,6 +14,9 @@ in
         usePredictableInterfaceNames = false;
         nameservers = [ "1.1.1.1" ];
         useNetworkd = true;
+      };
+      services.cloudflare-warp = {
+        enable = true;
       };
     })
   ];
