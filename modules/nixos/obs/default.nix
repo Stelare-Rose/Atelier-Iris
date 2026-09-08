@@ -14,7 +14,6 @@ in
       programs.obs-studio = {
         enable = true;
         enableVirtualCamera = true;
-
       };
     })
     (lib.mkIf cfg.droidcam.enable {
