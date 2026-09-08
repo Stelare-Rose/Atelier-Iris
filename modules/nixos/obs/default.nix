@@ -17,6 +17,9 @@ in
       };
     })
     (lib.mkIf cfg.droidcam.enable {
+      environment.systemPackages = with pkgs; [
+        droidcam
+      ];
       programs.obs-studio.plugins = with pkgs.obs-studio-plugins; [
         droidcam-obs
       ];

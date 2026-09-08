@@ -4,6 +4,7 @@
     environment.systemPackages = with pkgs; [
       wlsunset
       wl-clipboard
+      wezterm
     ];
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
