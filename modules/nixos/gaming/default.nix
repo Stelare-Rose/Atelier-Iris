@@ -1,6 +1,7 @@
-{ config, lib, unstable, pkgs, ... }:
+{ config, lib, ctx, pkgs, ... }:
 let 
   cfg = config.modules.gaming;
+  unstable = ctx.unstable;
 in
   {
   options.modules.gaming.enable = lib.mkEnableOption "gaming-related programs and settings";
@@ -22,6 +23,7 @@ in
         wineWow64Packages.full
         faudio # Needed for Proton and Wine
         dxvk
+        moonlight-qt
       ];
       programs.gamescope.enable = true;
       # TODO: Look into refactoring with nix-flatpak (github:gmodena/nix-flatpak)
