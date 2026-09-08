@@ -9,9 +9,11 @@ in
       Stelare = {
         isNormalUser = true;
         description = "Stelare";
-        shell = pkgs.fish;
+        shell = lib.mkDefault pkgs.fish;
       };
     };
-    programs.fish.enable = true;
+    modules.shells.fish.enable = lib.mkIf (
+      config.users.users.Stelare.shell == pkgs.fish
+    ) (lib.mkDefault true);
   };
 }
