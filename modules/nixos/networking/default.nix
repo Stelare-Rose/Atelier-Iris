@@ -18,6 +18,7 @@ in
       services.cloudflare-warp = {
         enable = true;
       };
+      services.vnstat.enable = true;
     })
   ];
 }
