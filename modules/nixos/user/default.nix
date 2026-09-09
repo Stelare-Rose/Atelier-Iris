@@ -10,11 +10,9 @@ in
         isNormalUser = true;
         description = "Stelare";
         extraGroups = [ "wheel" ];
-        shell = lib.mkDefault pkgs.fish;
+        shell = pkgs.fish;
       };
     };
-    modules.shells.fish.enable = lib.mkIf (
-      config.users.users.Stelare.shell == pkgs.fish
-    ) (lib.mkDefault true);
+    modules.shell.enable = lib.mkDefault true;
   };
 }
