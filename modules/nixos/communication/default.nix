@@ -1,6 +1,6 @@
 { config, lib, pkgs, ctx, ... }:
 let
-  cfg = config.modules.communcation;
+  cfg = config.modules.communication;
   unstable = ctx.unstable;
 in
   {
