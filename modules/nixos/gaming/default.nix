@@ -18,6 +18,7 @@ in
         steamcmd
         umu-launcher
         prismlauncher
+        temurin-bin-21 # Included for Minecraft
         gamemode
         parsec-bin
         wineWow64Packages.full
