@@ -11,10 +11,10 @@ in
   options.modules.development.game.enable = lib.mkEnableOption "godot";
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
-      cfg.android.enable = lib.mkDefault true;
-      cfg.databases.enable = lib.mkDefault true;
-      cfg.utilities.enable = lib.mkDefault true;
-      cfg.game.enable = lib.mkDefault true;
+      modules.development.android.enable = lib.mkDefault true;
+      modules.development.databases.enable = lib.mkDefault true;
+      modules.development.utilities.enable = lib.mkDefault true;
+      modules.development.game.enable = lib.mkDefault true;
     })
     (lib.mkIf cfg.android.enable {
       nixpkgs.config.android_sdk.accept_license = true;
@@ -34,7 +34,7 @@ in
         }) 
       ];
     })
-    (lib.mkIf cfg.android.enable && config.modules.users.enable {
+    (lib.mkIf (cfg.android.enable && config.modules.users.enable) {
       users.users.Stelare.extraGroups = [ "adbusers" "kvm" ];
     })
     (lib.mkIf cfg.databases.enable {
