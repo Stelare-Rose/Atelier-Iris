@@ -27,7 +27,7 @@ in
       ];
       loader = {
         efi.canTouchEfiVariables = true;
-        efi.efiSysMountPoint = lib.mkIf (!config.virtualisation.useBootLoader) "/boot/efi";
+        efi.efiSysMountPoint = lib.mkDefault "/boot/efi";
         timeout = 0;
         grub = {
           enable = true;
@@ -38,6 +38,10 @@ in
           splashImage = null;
         };
       }; 
+    };
+    virtualisation.vmVariantWithBootLoader = {
+      virtualisation.useEFIBoot = true;
+      boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
     };
   };
 }
