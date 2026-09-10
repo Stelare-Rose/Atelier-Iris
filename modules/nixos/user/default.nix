@@ -14,5 +14,11 @@ in
       };
     };
     modules.shell.enable = lib.mkDefault true;
+    virtualisation.vmVariantWithBootLoader = {
+      users.users.Stelare.initialPassword = "password";
+    };
+    virtualisation.vmVariant = {
+      users.users.Stelare.initialPassword = "password";
+    };
   };
 }
