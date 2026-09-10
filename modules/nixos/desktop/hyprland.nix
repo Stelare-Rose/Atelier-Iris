@@ -7,6 +7,7 @@
       wl-clipboard-rs
       libinput
       wayland-utils
+      waybar
     ];
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
