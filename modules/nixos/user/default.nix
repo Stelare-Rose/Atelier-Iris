@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, ctx, ... }:
 let
   cfg = config.modules.user;
 in
@@ -11,6 +11,12 @@ in
         description = "Stelare";
         extraGroups = [ "wheel" ];
         shell = pkgs.fish;
+      };
+    };
+    home-manager = {
+      extraSpecialArgs = { inherit ctx; nixcfg = config; };
+      users = {
+        "Stelare" = import (ctx.root + /common/users/stelare.nix);
       };
     };
     modules.shell.enable = lib.mkDefault true;

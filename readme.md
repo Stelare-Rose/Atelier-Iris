@@ -25,6 +25,7 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
 - common/
     - default.nix
     - home.nix
+- dotfiles/...
 ```
 
 Note: common/ files are the "default" configuration for all the hosts, importing all commonly used modules. Overrides for each host is contained in hosts/. 

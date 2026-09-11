@@ -1,6 +1,7 @@
 { config, pkgs, ctx, lib, ...}@inputs:
 let 
   # Unwrap ctx here
+  root = ctx.root;
 in
   {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -8,7 +9,7 @@ in
   boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_7_2;
 
   imports = [
-    ../modules/nixos
+    (root + /modules/nixos)
   ];
 
 	services.xserver.xkb = lib.mkDefault {
