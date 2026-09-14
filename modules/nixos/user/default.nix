@@ -13,6 +13,7 @@ in
         shell = pkgs.fish;
       };
     };
+
     home-manager = {
       extraSpecialArgs = { inherit ctx; nixcfg = config; };
       users = {

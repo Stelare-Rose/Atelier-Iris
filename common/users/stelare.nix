@@ -4,7 +4,12 @@ let
   root = ctx.root;
 in
   {
-  imports = [ (root + /modules/home) ];
+  imports = [ 
+    (root + /modules/home)
+    (root + /attachments/link.nix)
+  ];
+
+  programs.home-manager.enable = true;
   home = {
     username = "Stelare";
     homeDirectory = "/home/Stelare";

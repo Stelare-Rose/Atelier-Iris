@@ -8,6 +8,11 @@
       libinput
       wayland-utils
       waybar
+      hyprpaper
+      hyprshot
+      swaynotificationcenter
+      nvd
+      catppuccin-cursors.mochaLavender
     ];
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;

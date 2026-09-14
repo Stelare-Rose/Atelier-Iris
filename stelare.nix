@@ -1,14 +1,12 @@
 { config, pkgs, module, unstable, inputs, ... }:
 {
 	imports = [
-		(module + "/home/Wezterm")
 		(module + "/home/Productivity/Musescore")
 		(module + "/home/Productivity/Thunderbird")
 		(module + "/home/Nvim")
 		(module + "/home/Yazi")
 		(module + "/home/Tmux")
 		(import (module + "/home/rofi") {inherit config pkgs unstable;})
-		(import (module + "/home/Hyprland") {inherit config pkgs module;})
 		
 		inputs.zen-browser.homeModules.default
 	];
@@ -24,20 +22,7 @@
 			uris = ["qemu:///system"];
 		};
 	};
-	home.packages = with pkgs; [
-	  nss
-	];
 	# Music Player
-	services.mpd = {
-		enable = true;
-		musicDirectory = "/home/shared/Sync/Synced/@Music";
-		extraConfig = ''
-			audio_output {
-				type "pipewire"
-				name "Output"
-			}
-		'';
-		};
 
 	#User Programs
 	programs.waybar = {
