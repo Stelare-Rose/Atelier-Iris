@@ -4,6 +4,11 @@ let
 in
   {
   options.modules.user.enable = lib.mkEnableOption "default user configured for this moduleset.";
+  options.modules.user.extraImports = lib.mkOption {
+    type = lib.types.listOf lib.types.path;
+    default = [];
+    description = "Additional imports for home-manager";
+  };
   config = lib.mkIf cfg.enable {
     users.users = {
       Stelare = {
@@ -17,7 +22,9 @@ in
     home-manager = {
       extraSpecialArgs = { inherit ctx; nixcfg = config; };
       users = {
-        "Stelare" = import (ctx.root + /common/users/stelare.nix);
+        "Stelare" = {
+          imports = [ (ctx.root + /common/users/stelare.nix) ] ++ cfg.extraImports;
+        };
       };
     };
     modules.shell.enable = lib.mkDefault true;

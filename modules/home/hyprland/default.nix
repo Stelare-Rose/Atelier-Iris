@@ -33,7 +33,7 @@ in
   config = lib.mkIf cfg.enable {
     xdg.configFile."hypr/hyprlock.conf".source = config.util.link (root + /dotfiles/hypr/hyprlock.conf); 
     xdg.configFile."hypr/hyprland.conf".source = config.util.link (root + /dotfiles/hypr/hyprland.conf); 
-    xdg.configFile."hypr/monitor.conf".source = "monitor = ${mon.name}, ${mon.width}x${mon.height}@${mon.refresh}, 0x0, 1";
+    xdg.configFile."hypr/monitor.conf".text = "monitor = ${mon.name}, ${toString mon.width}x${toString mon.height}@${toString mon.refresh}, 0x0, 1";
 
     # Directories
     xdg.configFile."hypr/auxiliary".source = config.util.link (root + /dotfiles/hypr/auxiliary); 
