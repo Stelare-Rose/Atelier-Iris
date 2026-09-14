@@ -14,8 +14,11 @@
       nvd
       catppuccin-cursors.mochaLavender
     ];
-    programs.hyprland.enable = true;
-    programs.hyprland.xwayland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
     security = {
       polkit.enable = true;
       pam.services.hyprlock = {};
