@@ -28,7 +28,7 @@ in
       loader = {
         efi.canTouchEfiVariables = true;
         efi.efiSysMountPoint = lib.mkDefault "/boot/efi";
-        timeout = 0;
+        timeout = 10;
         grub = {
           enable = true;
           efiSupport = true;
