@@ -6,6 +6,7 @@
   modules = {
     communication.enable = false;
     creative.enable = false;
+    constellation.enable = false;
     development.enable = false;
     downloaders.enable = false;
     gaming.enable = false;
