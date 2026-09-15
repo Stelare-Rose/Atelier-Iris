@@ -3,7 +3,7 @@
 > NixOS Configuration managing 3 machines, built with flakes and home-manager.
 
 ## Overview
-This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab server (#Copernicus). Note that the names of each machine relate to words related to the moon. It also includes configuration settings for VM use with `build-vm` and `build-vm-with-bootloader`. This configuration is focused on creating reusable modules that can be shared across devices, allowing for convenient reproducibility for current and future devices.
+This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab server (#Copernicus). Note that the names of each machine relate to words related to the moon. It also includes configuration settings for VM use with `build-vm` and `build-vm-with-bootloader` using the #Nyx flake. This configuration is focused on creating reusable modules that can be shared across devices, allowing for convenient reproducibility for current and future devices.
 
 ## Structure
 ```
@@ -22,12 +22,16 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
         - users/...
         - default.nix
         - hardware.nix
+    - nyx/
+        - users/...
+        - default.nix
 - modules/
     - nixos/...
     - home/...
 - common/
     - default.nix
     - home.nix
+    - virtual-default.nix
 - dotfiles/...
 - attachments/...
 ```
