@@ -11,12 +11,15 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
 - flake.lock
 - hosts/
     - selene/
+        - users/...
         - default.nix
         - hardware.nix
     - crescent/
+        - users/...
         - default.nix
         - hardware.nix
     - copernicus/
+        - users/...
         - default.nix
         - hardware.nix
 - modules/
@@ -26,9 +29,9 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
     - default.nix
     - home.nix
 - dotfiles/...
+- attachments/...
 ```
-
-Note: common/ files are the "default" configuration for all the hosts, importing all commonly used modules. Overrides for each host is contained in hosts/. 
+Note: common/ files are the "default" configuration for all the hosts, importing all commonly used modules. Overrides for each host is contained in hosts/. default.nix refers to the nixos config, while users/and home.nix refer to the home-manager configuration
 
 ## Notes
 - Custom Flake Inputs for Zen-browser, and [Horologium](https://git.starrytea.cc/Constellation-Project/Horologium).
