@@ -55,6 +55,7 @@ in
         jq
         cloudflared
         posting
+        lazygit
       ];
     })
     (lib.mkIf cfg.game.enable {
