@@ -1,4 +1,4 @@
-{ config, lib, ctx, ... }:
+{ config, lib, pkgs, ctx, ... }:
 let
   cfg = config.modules.constellation;
   inputs = ctx.inputs;

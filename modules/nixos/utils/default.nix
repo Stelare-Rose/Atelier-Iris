@@ -6,7 +6,7 @@ in
   options.modules.utils.enable = lib.mkEnableOption "various utility packages";
   options.modules.utils.gui.enable = lib.mkEnableOption "various gui utility packages";
   config = lib.mkMerge [
-    (lib.mkIf (cfg.enable && config.users.enable) {
+    (lib.mkIf (cfg.enable && config.modules.user.enable) {
       users.users.Stelare.extraGroups = [ "video" "i2c" ];
     })
     (lib.mkIf cfg.enable {

@@ -7,9 +7,9 @@ in
   config = lib.mkIf cfg.enable {
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
-      xorg.libICE
-      xorg.libSM
-      xorg.libX11
+      libice
+      libsm
+      libx11
       icu
       fontconfig
     ];

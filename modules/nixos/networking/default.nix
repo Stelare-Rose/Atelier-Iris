@@ -9,6 +9,7 @@ in
       users.users.Stelare.extraGroups = [ "networkmanager" ];
     })
     (lib.mkIf cfg.enable {
+      nixpkgs.config.allowUnfree = true;
       networking = {
         networkmanager.enable = true;
         usePredictableInterfaceNames = false;

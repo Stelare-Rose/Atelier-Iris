@@ -34,7 +34,7 @@ in
         }) 
       ];
     })
-    (lib.mkIf (cfg.android.enable && config.modules.users.enable) {
+    (lib.mkIf (cfg.android.enable && config.modules.user.enable) {
       users.users.Stelare.extraGroups = [ "adbusers" "kvm" ];
     })
     (lib.mkIf cfg.databases.enable {
