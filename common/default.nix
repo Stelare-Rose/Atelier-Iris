@@ -10,6 +10,7 @@ in
 
   imports = [
     (root + /modules/nixos)
+    ./virtual-default.nix
   ];
 
 	services.xserver.xkb = lib.mkDefault {
