@@ -67,5 +67,8 @@
 
       # Server Configuration, Doesn't use Default.
       nixosConfigurations.Copernicus = mkHost [ ];
+
+      # Stripped VM Configuration
+      nixosConfigurations.Nyx = mkHost [ ./hosts/nyx ];
     };
 }
