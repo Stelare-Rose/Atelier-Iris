@@ -1,0 +1,106 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+	"source": "~/.config/fastfetch/logo.txt",
+	"type": "file",
+	"color": {
+		"1": "38;2;237;183;202",
+		"2": "38;2;219;180;211",
+		"3": "38;2;204;163;214",
+		"4": "38;2;170;153;209",
+		"5": "38;2;155;152;214"
+	},
+	"padding": {
+	}
+  },
+  "display": {
+  	"separator": "  ",
+	"color": {
+		"separator": "1"
+	},
+	"key": {
+        "type": "both"
+    }
+  },
+  "modules": [
+	"break",
+	{
+		"type":"title",
+		"format": "{#1}{##F09BB8}{1}{##BD89C9}@{##7C78C2}{2}"	
+	},
+	"break",
+	{
+    	"type": "os",
+		"key": "OS\t",
+		"keyColor": "38;2;240;155;184"
+	},
+	{
+		"type": "kernel",
+		"key": "Kernel\t",
+		"keyColor": "38;2;240;155;184"
+	},
+	{
+		"type": "uptime",
+		"key": "Uptime\t",
+		"keyColor": "38;2;240;155;184"
+	},
+	{
+    	"type":"localip",
+		"key":"Local IP\t",
+		"keyColor": "38;2;240;155;184"
+	},
+	{
+    	"type":"datetime",
+		"key":"Date\t",
+		"keyColor": "38;2;240;155;184"
+	},
+	"break",
+	{
+		"type": "packages",
+		"key": "Packages\t",
+		"keyColor": "38;2;219;180;211"
+	},
+	{
+		"type":"shell",
+		"key":"Shell\t",
+		"keyColor": "38;2;219;180;211"
+	},
+	{
+		"type":"wm",
+		"key":"WM\t",
+		"keyColor": "38;2;219;180;211"
+	},
+	"break",
+	{ 
+		"type":"cpu",
+		"key":"CPU\t",
+		"keyColor": "38;2;189;137;201"
+	},
+	{
+		"type":"gpu",
+		"key":"GPU\t",
+		"keyColor": "38;2;189;137;201"
+	},
+	{
+		"type":"memory",
+		"key":"Memory\t",
+		"keyColor": "38;2;189;137;201"
+	},
+	"break",
+	{
+		"type":"disk",
+		"key":"Disk\t",
+		"keyColor": "38;2;145;123;195",
+		"format": "{2} ({3}), mounted on {##8099D1}{20}"
+	},
+	"break",
+	{
+		"type":"custom",
+		"format":"{##BC6262}  {##C48F4B}  {##D6BF6D}  {##8CB372}  {##77BF8F}  {##77BBD0}  {##8099D1}  {##7C78C2}  {##917BC3}  {##BD89C9}  {##D38EC5}  {##F09BB8}"
+	},
+	{
+		"type":"custom",
+		"format":"{##CF8282}  {##D4A266}  {##E3CD7F}  {##9CCC96}  {##99CFAC}  {##90CDDE}  {##9BB0DE}  {##9B98D6}  {##AA99D1}  {##CCA3D6}  {##DBB4D3}  {##EDB7CA}"
+	}
+  ]
+}
