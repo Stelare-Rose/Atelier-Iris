@@ -63,7 +63,7 @@
       # TODO: Swap Pyxis to a Flake
       packages.${system}.pyxis = pkgs.callPackage /home/Stelare/Sync/Programming/Git/Pyxis/default.nix { };
       nixosConfigurations.Selene = mkHost [ ./hosts/selene ];
-      nixosConfigurations.Crescent = mkHost [ ]; 
+      nixosConfigurations.Crescent = mkHost [ ./hosts/crescent ]; 
 
       # Server Configuration, Doesn't use Default.
       nixosConfigurations.Copernicus = mkHost [ ];
