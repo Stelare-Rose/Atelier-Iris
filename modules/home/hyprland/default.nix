@@ -50,7 +50,7 @@ in
       xdg.configFile."hypr/hyprlock.conf".source = config.util.link (root + /dotfiles/hypr/hyprlock.conf); 
       xdg.configFile."hypr/hyprland.conf".source = config.util.link (root + /dotfiles/hypr/hyprland.conf); 
       xdg.configFile."hypr/monitor.conf".text = if cfg.monitor.autoMode 
-        then "monitor = , preferred, auto" 
+        then "monitor = , preferred, auto, auto" 
       else "monitor = ${mon.name}, ${toString mon.width}x${toString mon.height}@${toString mon.refresh}, 0x0, 1";
       # Directories
       xdg.configFile."hypr/auxiliary".source = config.util.link (root + /dotfiles/hypr/auxiliary); 
