@@ -32,8 +32,9 @@ in
         grub = {
           enable = true;
           efiSupport = true;
-          device = "nodev";
           useOSProber = true;
+          device = "nodev";
+          copyKernels = false;
           theme = (pkgs.catppuccin-grub.override {flavor = "latte";});
           splashImage = null;
         };
