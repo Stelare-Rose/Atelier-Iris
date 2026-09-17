@@ -12,6 +12,10 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.home-manager.follows = "home-manager";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Constellations
     horologium = {
       url = "git+https://git.starrytea.cc/Constellation-Project/Horologium.git";
@@ -23,6 +27,7 @@
     nixpkgs, 
     nixpkgs-unstable, 
     home-manager, 
+    sops-nix,
     horologium, 
     ... }@inputs: 
     let
@@ -37,7 +42,6 @@
         config.allowUnfree = true;
       };
 
-
       # Args
       ctx = {
         inherit
@@ -49,6 +53,7 @@
 
       modules = [
         home-manager.nixosModules.default
+        sops-nix.nixosModules.sops
         horologium.nixosModules.default
       ];
 
