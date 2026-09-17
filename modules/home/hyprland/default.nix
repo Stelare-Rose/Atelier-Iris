@@ -1,4 +1,4 @@
-{ config, nixcfg, lib, ctx, options, ... }:
+{ config, nixcfg, lib, ctx, ... }:
 let
   cfg = config.home.hyprland;
   mon = cfg.monitor;
