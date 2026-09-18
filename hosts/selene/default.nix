@@ -10,6 +10,7 @@ in
 	services.xserver.deviceSection = ''
 	    Option "VariableRefresh" "true"
 	'';
+  boot.initrd.kernelModules = [ "i915" ];
   boot.kernelModules = [
     "i915"
     "nfs"
