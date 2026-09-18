@@ -7,6 +7,7 @@ in
     ../../common/default.nix
     ./hardware.nix
   ];
+  networking.hostName = "Crescent"; 
   modules = {
     user.extraImports = [ ./users/stelare.nix ];
     wireguard.secretPath = root + /secrets/crescent/wireguard/wg0.conf;
