@@ -1,8 +1,13 @@
 keys:
   - &admin_crescent age1rttg7yxme3flln4vr4jdv73cqvjflz68d2yj2tw8jgere40e99hsnq375t
+  - &admin_selene age1zhse2r9f9pnylrm30fkvqfwmy2wkwe97upwgz4xsuwxc6edlzfhsypl98r
 
 creation_rules:
   - path_regex: ^secrets/crescent/.*$
     key_groups:
       - age:
         - *admin_crescent
+  - path_regex: ^secrets/selene/.*$
+    key_groups:
+      - age:
+        - *admin_selene
