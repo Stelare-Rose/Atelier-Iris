@@ -25,6 +25,13 @@ in
     networking.firewall = {
       allowedUDPPorts = [ 51820 ];
     };
+
+    systemd.services."wg-quick-wg0" = {
+      serviceConfig = {
+        Restart = "on-failure";
+        RestartSec = "5s";
+      };
+    };
     
     networking.wg-quick.interfaces.wg0.configFile = lib.mkDefault config.sops.secrets."wg0-conf".path;
   };
