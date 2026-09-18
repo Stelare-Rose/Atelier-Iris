@@ -1,9 +1,9 @@
 # Atelier-Iris
 > Part of the Atelier (codename for personal usage) set of projects!  
-> NixOS Configuration managing 3 machines, built with flakes and home-manager.
-
+> NixOS Configuration managing 3 machines, built with flakes and home-manager.  
+> Note that the configuration for Copernicus is currently work in progress.
 ## Overview
-This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab server (#Copernicus). Note that the names of each machine relate to words related to the moon. It also includes configuration settings for VM use with `build-vm` and `build-vm-with-bootloader` using the #Nyx flake. This configuration is focused on creating reusable modules that can be shared across devices, allowing for convenient reproducibility for current and future devices.
+This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab server (#Copernicus). Note that the names of each machine relate to words related to the moon. It also includes configuration settings for VM use with `build-vm` and `build-vm-with-bootloader` using the #Nyx flake. This configuration is focused on creating reusable modules that can be shared across devices, allowing for convenient reproducibility for current and future devices. This configuration also uses [sops-nix](https://github.com/Mic92/sops-nix) to allow for secrets to be committed to git and shared across devices.
 
 ## Structure
 ```
@@ -18,7 +18,7 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
         - users/...
         - default.nix
         - hardware.nix
-    - copernicus/
+    - copernicus/ (WIP!)
         - users/...
         - default.nix
         - hardware.nix
@@ -34,6 +34,7 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
     - virtual-default.nix
 - dotfiles/...
 - attachments/...
+- secrets/...
 ```
 Note: common/ files are the "default" configuration for all the hosts, importing all commonly used modules. Overrides for each host is contained in hosts/. default.nix refers to the nixos config, while users/and home.nix refer to the home-manager configuration
 
@@ -46,7 +47,7 @@ Note: common/ files are the "default" configuration for all the hosts, importing
 ```bash
 sudo nixos-rebuild switch --flake ~/Atelier-Iris#<flake> --impure
 ```
-Note that impure is required for Pyxis
+Note that impure is (currently) required for Pyxis
 
 ## Requirements
 - NixOS with Flakes Enabled
@@ -66,4 +67,4 @@ with a few personal deviations:
   toggling a service on/off.
 
 ## Credits
-Thanks to [0xc000022070](https://github.com/0xc000022070) for the Zen-browser flake that I use in this configuration. Thank you to the [Catppuccin](https://github.com/catppuccin) team, as the catppuccin theme is used, and has influenced many parts of this configuration.
+Thanks to [0xc000022070](https://github.com/0xc000022070) for the Zen-browser flake that I use in this configuration. Thank you to the [Catppuccin](https://github.com/catppuccin) team, as the catppuccin theme is used, and has influenced many parts of this configuration. Thanks to the [sops-nix](https://github.com/Mic92/sops-nix) team for the secrets management tool used in this configuration. 
