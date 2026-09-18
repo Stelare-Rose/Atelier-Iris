@@ -73,6 +73,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-release": {
+      "locked": {
+        "lastModified": 1789713222,
+        "narHash": "sha256-NakcTenQDSQedarGjozR6ZwkYksV4MQUtZwvwUi8NIU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d70770bf2bb127575259c045b731ad221465cb2b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1789546076,
@@ -110,6 +126,7 @@
         "home-manager": "home-manager",
         "horologium": "horologium",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-release": "nixpkgs-release",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix",
         "zen-browser": "zen-browser"
