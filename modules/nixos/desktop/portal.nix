@@ -6,8 +6,7 @@
       extraPortals = with pkgs; [ 
         xdg-desktop-portal-gtk 
         xdg-desktop-portal-hyprland
-        xdg-desktop-portal-termfilechooser
-      ];
+      ] ++ lib.optional config.modules.utils.enable xdg-desktop-portal-termfilechooser;
     };
   };
 }

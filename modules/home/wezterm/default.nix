@@ -9,6 +9,7 @@ in
     default = nixcfg.modules.desktop.enable;
     description = "Enables the home-manager side of wezterm";
   };
+  home.sessionVariables.TERMCMD = "wezterm start --always-new-process";
   config = lib.mkIf cfg.enable {
     programs.wezterm = {
       enable = true;
