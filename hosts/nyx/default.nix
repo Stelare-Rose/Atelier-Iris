@@ -13,6 +13,7 @@
     media.production.enable = false;
     office.enable = false;
     virtualisation.enable = false;
+    wireguard.enable = false;
     user.extraImports = [ ./users/stelare.nix ];
   };
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

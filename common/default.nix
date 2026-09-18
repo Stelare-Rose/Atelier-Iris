@@ -42,6 +42,7 @@ in
     user.enable = lib.mkDefault true;
     utils.enable = lib.mkDefault true;
     virtualisation.enable = lib.mkDefault true;
+    wireguard.enable = lib.mkDefault true;
   };
     
   time.timeZone = lib.mkDefault "Asia/Jakarta";

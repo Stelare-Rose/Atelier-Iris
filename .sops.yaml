@@ -1,0 +1,8 @@
+keys:
+  - &admin_crescent age1rttg7yxme3flln4vr4jdv73cqvjflz68d2yj2tw8jgere40e99hsnq375t
+
+creation_rules:
+  - path_regex: ^secrets/crescent/.*$
+    key_groups:
+      - age:
+        - *admin_crescent

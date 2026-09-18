@@ -4,38 +4,28 @@ let
 in
   {
   options.modules.wireguard.enable = lib.mkEnableOption "wireguard, connecting to Copernicus";
-  options.modules.wireguard.ipAddress = lib.mkOption {
-    type = lib.types.str;
-    default = "";
-    description = "IP Address for this device on Wireguard network";
+  options.modules.wireguard.secretPath = lib.mkOption {
+    type = lib.types.nullOr lib.types.path;
+    default = null;
+    description = "Path to the sops file containing the wireguard config";
   };
 
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = cfg.ipAddress != "";
-        message = "Wireguard requires ip address to be set";
+        assertion = cfg.secretPath != null;
+        message = "Wireguard requires secret file to be set";
       } 
     ];
+    sops.secrets."wg0-conf" = {
+      sopsFile = cfg.secretPath;
+      format = "binary";
+      path = "/run/secrets/wg0.conf";
+    };
     networking.firewall = {
       allowedUDPPorts = [ 51820 ];
     };
-
-    networking.wireguard.interfaces = {
-      wg0 = {
-        ips = [cfg.ipAddress];
-        listenPort = 51820;
-
-        privateKeyFile = "[placeholder]";
-        peers = [
-          {
-            publicKey = "[placeholder]";
-            allowedIPs = ["10.255.0.0/16"];
-            endpoint = "[placeholder]";
-            persistentKeepalive = 25;
-          }
-        ];
-      };
-    };
+    
+    networking.wg-quick.interfaces.wg0.configFile = lib.mkDefault config.sops.secrets."wg0-conf".path;
   };
 }
