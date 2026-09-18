@@ -7,6 +7,6 @@ in
   options.modules.browser.enable = lib.mkEnableOption "browser";
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ inputs.zen-browser.packages."${pkgs.system}".default ];
+    environment.systemPackages = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
   };
 }

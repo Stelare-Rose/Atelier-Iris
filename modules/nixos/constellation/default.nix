@@ -9,8 +9,8 @@ in
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with inputs; [
-      self.packages.${pkgs.system}.pyxis
-      horologium.packages.${pkgs.system}.horologium-cli
+      self.packages.${pkgs.stdenv.hostPlatform.system}.pyxis
+      horologium.packages.${pkgs.stdenv.hostPlatform.system}.horologium-cli
     ];
   };
 }
