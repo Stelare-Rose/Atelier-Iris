@@ -10,6 +10,7 @@
       waybar
       hyprpaper
       hyprshot
+      hyprlock
       swaynotificationcenter
       nvd
       catppuccin-cursors.mochaLavender

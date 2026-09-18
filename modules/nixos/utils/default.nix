@@ -16,6 +16,7 @@ in
         appimage-run
         yazi
         sops
+        tmux
         ddcutil
         brightnessctl
       ];
@@ -24,6 +25,7 @@ in
       environment.systemPackages = with pkgs; [
         via
         nautilus
+        bitwarden-desktop
       ];
     })
   ];
