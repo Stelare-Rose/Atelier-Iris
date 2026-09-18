@@ -17,6 +17,8 @@ in {
     programs.neovim = {
       enable = true;
       defaultEditor = true;
+      withPython3 = true;
+      withRuby = true;
       initLua = "require(\"config\")";
       plugins = with pkgs.vimPlugins; [
         catppuccin-nvim
