@@ -15,6 +15,7 @@ in
         dotool
         appimage-run
         yazi
+        sops
         ddcutil
         brightnessctl
       ];
