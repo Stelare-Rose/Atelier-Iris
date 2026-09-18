@@ -1,0 +1,199 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](pink)\
+$os\
+$username\
+[](bg:strawberry fg:pink)\
+$hostname\
+[](bg:orange fg:strawberry)\
+$directory\
+[](bg:lemon fg:orange)\
+$git_branch\
+[](fg:lemon bg:leaf)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:leaf bg:sky)\
+$nix_shell\
+[](fg:sky)\
+$cmd_duration\
+$line_break\
+$character"""
+
+right_format = """
+[](fg:lilac)\
+$time\
+[](lilac)\
+"""
+
+palette = 'milk_tea'
+
+[os]
+disabled = false
+style = "bg:pink fg:grape"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+NixOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:pink fg:subtext_2"
+style_root = "bg:pink fg:subtext_2"
+format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+format = '[  $hostname ]($style)'
+style = "bg:strawberry fg:text"
+
+[directory]
+style = "bg:orange fg:text"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:lemon"
+format = '[[ $symbol $branch ](fg:subtext_2 bg:lemon)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+use_git_executable = true
+
+[nodejs]
+symbol = ""
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[c]
+symbol = " "
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[php]
+symbol = ""
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[java]
+symbol = " "
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:leaf"
+format = '[[ $symbol( $version) ](fg:subtext_2 bg:leaf)]($style)'
+
+[python]
+symbol = ""
+style = "bg:leaf"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:subtext_2 bg:leaf)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:subtext_2 bg:sapphire)]($style)'
+
+[nix_shell]
+symbol = " "
+style = "fg:subtext_2 bg:sky"
+format = '[ ($style)via $symbol$name ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lilac"
+format = '[[  $time ](fg:subtext_2 bg:lilac)]($style)'
+
+[line_break]
+disabled = true
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:leaf)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:leaf)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+[cmd_duration]
+show_milliseconds = true
+format = " $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
+
+[palettes.milk_tea]
+foam       = "#f7f4e9"
+cream      = "#f0e8da"
+base       = "#e6d9c8"
+tea        = "#decec1"
+strawberry = "#cf8282"
+orange     = "#d4a266"
+lemon      = "#e3cd7f"
+leaf       = "#9ccc96"
+mint       = "#99cfac"
+sky        = "#90cdde"
+blueberry  = "#9bb0de"
+grape      = "#9b98d6"
+plum       = "#aa99d1"
+lavender   = "#cca3d6"
+lilac      = "#dbb4d3"
+pink       = "#edb7ca"
+subtext_2   = "#616161"
+subtext_1   = "#4d4d4d"
+text       = "#3b3b3b"
+highlight  = "#2e2e2e"

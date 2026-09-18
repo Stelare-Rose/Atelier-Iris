@@ -10,5 +10,6 @@ in {
   };
   config = lib.mkIf cfg.enable {
     xdg.configFile."fish".source = config.util.link (root + /dotfiles/fish);
+    xdg.homeFile.".scripts".source = config.util.link (root + /dotfiles/scripts);
   };
 }

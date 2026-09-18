@@ -1,0 +1,127 @@
+@define-color strawberry #CF8282;
+@define-color orange #D4A266;
+@define-color lemon #DEC887;
+@define-color green #9CCC96;
+@define-color cyan #99CFAC;
+@define-color sky #90CDDE;
+@define-color blueberry #9BB0DE;
+@define-color grape #9B98D6;
+@define-color plum #AA99D1;
+@define-color lavender #CCA3D6;
+@define-color lilac #DBB4D3;
+@define-color pink #edb7ca;
+@define-color foam #FFFCF2;
+@define-color cream #F2F0EB;
+@define-color base #E6E4DF;
+@define-color text #3B3B3B;
+
+* {
+	font-family: Fira Sans, 'Symbols Nerd Font';
+	font-size: 14px;
+	min-height: 0;
+}
+
+#waybar {
+	background-color: transparent;
+	color: @text;
+}
+
+#workspaces {
+	border-radius: 1rem;
+	margin: 0px 6px;
+	background-color: @foam;
+}
+
+#workspaces button {
+	color: @pink;
+	border-radius: 1rem;
+	transition: all 0.3s linear;
+}
+
+#workspaces button.active {
+	min-width: 2rem;
+	color: @foam;
+	background-color: @lavender;
+	border-radius: 1rem;
+	transition: all 0.3s linear;
+}
+
+#workspaces button:hover {
+	color: @pink;
+	border-radius: 1rem;
+	transition: all 0.3s linear;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#network,
+#cpu,
+#memory,
+#custom-nix-updates,
+#custom-username,
+#custom-power {
+	background-color: @foam;
+	padding: 0 1rem;
+	border-radius: 0.2rem;
+}
+
+#clock {
+	color: @lavender;
+	border-radius: 0px 1rem 1rem 0px;
+	margin-right: 1rem
+}
+
+#battery {
+	color: @cyan;
+}
+
+#battery.charging {
+	color: @cyan;
+}
+
+#battery.warning:not(.charging) {
+	color: @strawberry;
+}
+
+#battery {
+	border-radius: 1rem;
+}
+
+#pulseaudio {
+	color: @blueberry;
+	border-radius: 1rem 0px 0px 1rem;
+	margin-left: 1rem;
+}
+
+#custom-username {
+	color: @pink;
+	border-radius: 1rem;
+	margin-right: 1rem;
+}
+
+#memory {
+	color: @orange;
+	border-radius: 1rem;
+	margin-left: 1rem
+}
+
+#cpu {
+	color: @strawberry;
+	border-radius: 1rem;
+	margin-left: 1rem
+}
+
+#network {
+	color: @sky;
+	border-radius: 1rem;
+	margin-left: 1rem;
+}
+
+#tray {
+	border-radius: 1rem;
+}

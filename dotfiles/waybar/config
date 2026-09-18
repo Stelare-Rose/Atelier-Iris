@@ -1,0 +1,108 @@
+[{
+	"position": "top",
+	"width": 1920,
+	"height": 30,
+	"margin-top": 4,
+	"margin-bottom": 4,
+	"battery": {
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-icons": {
+			"default": [
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󱈏 "
+			]
+		},
+		"format-plugged": "󰂅 {capacity}%",
+		"states": {
+			"critical": 15,
+			"warning": 30
+		}
+	},
+	"clock": {
+		"format": "󱑆  {:%H:%M | %d/%m/%Y}",
+		"timezone": "Asia/Jakarta",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"hyprland/workspaces": {
+		"disable-scroll": false,
+		"format":"{icon}",
+		"format-icons": {
+			"active":"󰫢"
+		},
+		"sort-by-name": true,
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1"
+
+	},
+	"layer": "top",
+	"network": {
+		"interface": "wlan0",
+		"format": "   {ifname}",
+		"format-wifi": "   ({signalStrength}%) {essid}",
+		"format-ethernet": "   {ipaddr}/{cidr}",
+		"format-disconnected": "", //An empty format will hide the module.
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+		"tooltip-format-ethernet": "{ifname}",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 15
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "  {usage}%"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "  {used:0.1f}G/{total:0.1f}G"
+	},
+	"custom/username":{
+		"exec": "$HOME/.config/waybar/modules/user.sh",
+		"interval": 3600,
+		"format-alt": "  {}",
+		"format": ""
+	},
+	"custom/nix-updates": {
+		"exec": "$HOME/.config/waybar/modules/update-checker.sh", // <--- path to script
+		"on-click": "$HOME/.config/waybar/modules/update-checker.sh && notify-send 'The system has been updated'",
+		"interval": 3600, // refresh every hour
+		"tooltip": true,
+		"return-type": "json",
+		"format": "{} {icon}",
+		"format-icons": {
+			"has-updates": "", // icon when updates needed
+			"updated": "" // icon when all packages updated
+		},
+	},
+	"modules-left": [
+		"cpu",
+		"memory",
+		"network",
+	],
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+	"modules-right": [
+		"battery",
+		"pulseaudio",
+		"clock",
+		"custom/username",
+	],
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+		"format-icons": {
+			"default": ""
+		},
+		"format-muted": "",
+		"on-click": "pavucontrol",
+		"scroll-step": 1
+	},
+}]
