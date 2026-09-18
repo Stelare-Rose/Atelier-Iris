@@ -6,7 +6,7 @@ in
   {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_7_2;
+  boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_zen;
 
   imports = [
     (root + /modules/nixos)
