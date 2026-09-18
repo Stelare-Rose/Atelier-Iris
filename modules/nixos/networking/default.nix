@@ -20,6 +20,8 @@ in
         enable = true;
       };
       services.vnstat.enable = true;
+      systemd.network.wait-online.enable = lib.mkDefault false;
+      systemd.services.NetworkManager-wait-online.enable = lib.mkDefault false;
     })
   ];
 }
