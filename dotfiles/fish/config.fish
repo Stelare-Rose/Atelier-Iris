@@ -3,5 +3,7 @@ alias ls="eza -g --icons=always"
 alias lt="eza -T --icons=always"
 if status is-interactive
   starship init fish | source
-  fastfetch
+  if not set -q ASCIINEMA_REC
+    fastfetch
+  end
 end

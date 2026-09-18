@@ -8,6 +8,9 @@ in
     systemd.services.plymouth-quit = {
       serviceConfig.ExecStart = lib.mkForce "${pkgs.plymouth}/bin/plymouth --wait quit";
     };
+    systemd.services.plymouth-quit-wait.serviceConfig.ExecStartPre = [
+      "${pkgs.coreutils}/bin/sleep 5"
+    ];
     boot = {
       plymouth = {
         enable = true;

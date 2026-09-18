@@ -17,6 +17,7 @@ in
         yazi
         sops
         tmux
+        asciinema
         ddcutil
         brightnessctl
       ];
