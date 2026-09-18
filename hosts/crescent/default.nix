@@ -1,6 +1,7 @@
 { ctx, ... }:
 let
   inputs = ctx.inputs;
+  root = ctx.root;
 in
   {
   imports = [
@@ -17,9 +18,9 @@ in
       }).linux-firmware;
     })
   ];
+  sops.age.keyFile = "/home/Stelare/.config/sops/age/keys.txt";
   modules = {
     user.extraImports = [ ./users/stelare.nix ];
-    wireguard.enable = false;
- #   wireguard.secretPath = root + /secrets/crescent/wireguard/wg0.conf;
+    wireguard.secretPath = root + /secrets/crescent/wireguard/wg0.conf;
   };
 }
