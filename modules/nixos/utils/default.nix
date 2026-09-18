@@ -18,6 +18,7 @@ in
         sops
         tmux
         asciinema
+        doitlive
         ddcutil
         brightnessctl
       ];
