@@ -40,6 +40,7 @@ in
     office.enable = lib.mkDefault true;
     shell.enable = lib.mkDefault true;
     ssh.enable = lib.mkDefault true;
+    syncthing.enable = lib.mkDefault true;
     user.enable = lib.mkDefault true;
     utils.enable = lib.mkDefault true;
     virtualisation.enable = lib.mkDefault true;
