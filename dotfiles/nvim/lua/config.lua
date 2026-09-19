@@ -250,6 +250,12 @@ vim.lsp.config('qmlls', {
   filetypes = { 'qml' },
   root_markers = { 'flake.nix', '.git' },
 })
+vim.lsp.config('astro', {
+  cmd_env = { NODE_PATH = vim.fn.getcwd() .. "/node_modules" },
+  init_options = {
+    typescript = { tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib" },
+  },
+})
 
 vim.lsp.enable('qmlls')
 vim.lsp.enable("emmet_language_server")
@@ -266,6 +272,7 @@ vim.lsp.enable('jdtls')
 vim.lsp.enable('dartls')
 vim.lsp.enable('svelte')
 vim.lsp.enable('rust_analyzer')
+
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
