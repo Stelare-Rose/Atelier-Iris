@@ -15,6 +15,26 @@
         "type": "github"
       }
     },
+    "cursor": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789988444,
+        "narHash": "sha256-2cspM0nh6SeYXJeRetzLuihxh2PkA6vqDX/i+Dk18kA=",
+        "ref": "refs/heads/main",
+        "rev": "04d0783c73198c07f917cbd883abae4b4a9cc26d",
+        "revCount": 2,
+        "type": "git",
+        "url": "https://git.starrytea.cc/Stelare-Rose/Starry-Cursor.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.starrytea.cc/Stelare-Rose/Starry-Cursor.git"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -75,11 +95,11 @@
     },
     "nixpkgs-release": {
       "locked": {
-        "lastModified": 1789954139,
-        "narHash": "sha256-wnYWQkfYoUW6m3UyRi9IHy59BvT6V++KjHRy08mN+mA=",
+        "lastModified": 1789981869,
+        "narHash": "sha256-r62x6UQMI7GvGgPy4qheBmIzgiO6kgjHC8KfSyLyYU0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6a6c23deb24003c23a1a4f03cdc5bf0f34543cf6",
+        "rev": "cdee87c5a12d36967a494184e5078fdfd8d2bcd3",
         "type": "github"
       },
       "original": {
@@ -123,6 +143,7 @@
     },
     "root": {
       "inputs": {
+        "cursor": "cursor",
         "home-manager": "home-manager",
         "horologium": "horologium",
         "nixpkgs": "nixpkgs",
@@ -160,11 +181,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1789948428,
-        "narHash": "sha256-QLMHJsRax6CpZR1x2fNOxorw53bsHydkrIuxhPCftrs=",
+        "lastModified": 1789962061,
+        "narHash": "sha256-gyzlqZi+R1cq/n/c6vh5Rz10M7QausR/O8v+YGAOyTA=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "6abd9c70a29f47fb1dda33c712cf4a305e5b31ac",
+        "rev": "1c3a1fcacf97eb3792e9292e3afc0edbfcfa01d4",
         "type": "github"
       },
       "original": {

@@ -17,9 +17,16 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Constellations
     horologium = {
       url = "git+https://git.starrytea.cc/Constellation-Project/Horologium.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Custom Packages / Attachments
+    cursor = {
+      url = "git+https://git.starrytea.cc/Stelare-Rose/Starry-Cursor.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -30,6 +37,7 @@
     home-manager, 
     sops-nix,
     horologium, 
+    cursor,
     ... }@inputs: 
     let
       system = "x86_64-linux";
