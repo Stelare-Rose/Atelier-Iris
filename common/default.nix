@@ -1,4 +1,4 @@
-{ config, pkgs, ctx, lib, ...}@inputs:
+{ pkgs, ctx, lib, ...}:
 let 
   # Unwrap ctx here
   root = ctx.root;
