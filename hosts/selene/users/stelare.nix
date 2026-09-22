@@ -1,5 +1,8 @@
 { ... }:
 {
+  imports = [
+    ./modules/git
+  ];
   home.hyprland.monitor = {
     refresh = 165;
   };
