@@ -1,0 +1,62 @@
+% Options for packages loaded elsewhere
+\usepackage{fontspec}
+\usepackage{indentfirst}
+\usepackage{etoolbox}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{fvextra}
+\usepackage{framed}
+\setlength{\FrameSep}{6pt}
+
+\makeatletter
+\@ifundefined{Highlighting}{
+  \DefineVerbatimEnvironment{Highlighting}{Verbatim}{}
+}{}
+\makeatother
+
+\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\},
+  xleftmargin=6pt,
+  breaklines=true,
+  breaknonspaceingroup=true,
+  breakanywhere=true,
+  fontsize=\scriptsize
+}
+\makeatletter
+\@ifundefined{Shaded}{}{
+  \let\oldShaded\Shaded
+  \let\endoldShaded\endShaded
+  \renewenvironment{Shaded}{
+    \vspace{0.5em}
+    \oldShaded
+  }{
+    \endoldShaded
+    \vspace{0.5em}
+  }
+}
+\makeatother
+
+\makeatletter
+\renewcommand\paragraph{%
+  \@startsection{paragraph}{4}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {1.5ex \@minus.2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+\geometry{left=1.5cm, right=1.5cm, bottom=1.5cm}
+\setmonofont{Cascadia Code}[
+  Scale=MatchLowercase,
+  RawFeature={-calt,-liga,-dlig,-clig,-rlig},
+  UprightFont={*-SemiLight}
+]
+\setmainfont{Nunito}[
+  Scale=MatchLowercase,
+  Renderer=HarfBuzz,
+  Variable=OpenType,
+  UprightFont={*-Regular},
+  BoldFont={*-Bold},
+]
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\AfterEndEnvironment{Shaded}{\noindent\ignorespaces}

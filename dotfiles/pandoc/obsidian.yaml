@@ -1,0 +1,19 @@
+from: gfm+wikilinks_title_after_pipe
+pdf-engine: lualatex
+standalone: true
+ 
+highlight-style: ${.}/milktea.theme
+
+include-in-header:
+  - ${.}/format.tex
+
+filters:
+  - ${.}/filename.lua
+  - ${.}/properties.lua
+  - ${.}/codeblock-shade.lua
+  - ${.}/noindent-combined.lua
+  - ${.}/skip-title.lua
+  - ${.}/skip-links.lua
+  - ${.}/columns.lua
+ 
+
