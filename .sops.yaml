@@ -11,3 +11,8 @@ creation_rules:
     key_groups:
       - age:
         - *admin_selene
+  - path_regex: ^secrets/common/.*$
+    key_groups:
+      - age:
+        - *admin_crescent
+        - *admin_selene

@@ -1,6 +1,7 @@
 { config, lib, pkgs, ctx, ... }:
 let
   cfg = config.modules.user;
+  inputs = ctx.inputs;
 in
   {
   options.modules.user.enable = lib.mkEnableOption "default user configured for this moduleset.";
@@ -23,7 +24,10 @@ in
       extraSpecialArgs = { inherit ctx; nixcfg = config; };
       users = {
         "Stelare" = {
-          imports = [ (ctx.root + /common/users/stelare.nix) ] ++ cfg.extraImports;
+          imports = [ 
+            (ctx.root + /common/users/stelare.nix) 
+            inputs.sops-nix.homeManagerModule
+          ] ++ cfg.extraImports;
         };
       };
     };
