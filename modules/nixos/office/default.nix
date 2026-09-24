@@ -16,6 +16,7 @@ in
       unzip
       rar
       imagemagick
+      typst
     ];
   };
 }
