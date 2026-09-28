@@ -17,6 +17,7 @@ in
       rar
       imagemagick
       typst
+      mermaid-filter
     ];
   };
 }

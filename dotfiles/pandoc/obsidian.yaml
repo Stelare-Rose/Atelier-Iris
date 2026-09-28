@@ -8,6 +8,7 @@ include-in-header:
   - ${.}/format.tex
 
 filters:
+  - ${.}/mermaid-wrapper.sh
   - ${.}/filename.lua
   - ${.}/properties.lua
   - ${.}/codeblock-shade.lua
