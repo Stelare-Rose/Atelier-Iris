@@ -7,6 +7,7 @@ in
   imports = [
     ../../common/default.nix
     ./hardware.nix
+    ./modules/kanata
   ];
   networking.hostName = "Crescent"; 
   # Temporary workaround for bug regarding R680M, swap linux-firmware to the release version.
