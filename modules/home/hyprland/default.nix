@@ -1,8 +1,7 @@
-{ config, nixcfg, lib, ctx, ... }:
+{ config, nixcfg, lib, ... }:
 let
   cfg = config.home.hyprland;
   mon = cfg.monitor;
-  root = ctx.root;
 in
   {
   options.home.hyprland.enable = lib.mkOption {
@@ -47,14 +46,14 @@ in
         "Monitor Width, Height, Name, or Refresh is set with Auto Mode enabled. Note that monitor setting will be overriden by auto mode.";
     }
     (lib.mkIf cfg.enable {
-      xdg.configFile."hypr/hyprlock.conf".source = config.util.link (root + /dotfiles/hypr/hyprlock.conf); 
-      xdg.configFile."hypr/hyprland.conf".source = config.util.link (root + /dotfiles/hypr/hyprland.conf); 
+      xdg.configFile."hypr/hyprlock.conf".source = config.util.link "/dotfiles/hypr/hyprlock.conf"; 
+      xdg.configFile."hypr/hyprland.conf".source = config.util.link "/dotfiles/hypr/hyprland.conf"; 
       xdg.configFile."hypr/monitor.conf".text = if cfg.monitor.autoMode 
         then "monitor = , preferred, auto, auto" 
       else "monitor = ${mon.name}, ${toString mon.width}x${toString mon.height}@${toString mon.refresh}, 0x0, 1";
       # Directories
-      xdg.configFile."hypr/auxiliary".source = config.util.link (root + /dotfiles/hypr/auxiliary); 
-      xdg.configFile."hypr/backgrounds".source = config.util.link (root + /dotfiles/hypr/backgrounds);
+      xdg.configFile."hypr/auxiliary".source = config.util.link "/dotfiles/hypr/auxiliary"; 
+      xdg.configFile."hypr/backgrounds".source = config.util.link "/dotfiles/hypr/backgrounds";
 
       # Nix-Managed
       programs.waybar.enable = true;

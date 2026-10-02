@@ -1,7 +1,6 @@
-{ config, nixcfg, lib, ctx, ... }:
+{ config, nixcfg, lib, ... }:
 let
   cfg = config.home.fastfetch;
-  root = ctx.root;
 in {
   options.home.fastfetch.enable = lib.mkOption {
     type = lib.types.bool;
@@ -9,6 +8,6 @@ in {
     description = "Enables fastfetch";
   };
   config = lib.mkIf cfg.enable {
-    xdg.configFile."fastfetch".source = config.util.link (root + /dotfiles/fastfetch);
+    xdg.configFile."fastfetch".source = config.util.link "/dotfiles/fastfetch";
   };
 }

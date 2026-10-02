@@ -1,7 +1,6 @@
-{ config, nixcfg, lib, pkgs, ctx, ... }:
+{ config, nixcfg, lib, pkgs, ... }:
 let
   cfg = config.home.rofi;
-  root = ctx.root;
 in
   {
   options.home.rofi.enable = lib.mkOption {
@@ -10,7 +9,7 @@ in
     description = "Enables rofi";
   };
   config = lib.mkIf cfg.enable {
-    xdg.configFile."rofi/catppuccin-latte.rasi".source = config.util.link (root + /dotfiles/rofi/catppuccin-latte.rasi);
+    xdg.configFile."rofi/catppuccin-latte.rasi".source = config.util.link "/dotfiles/rofi/catppuccin-latte.rasi";
     home.packages = with pkgs; [
       rofi-network-manager
     ];

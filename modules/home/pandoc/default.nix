@@ -1,7 +1,6 @@
-{ config, nixcfg, lib, ctx, ... }:
+{ config, nixcfg, lib, ... }:
 let
   cfg = config.home.pandoc;
-  root = ctx.root;
 in
   {
   options.home.pandoc.enable = lib.mkOption {
@@ -10,6 +9,6 @@ in
     description = "Enables obsidian pandoc config";
   };
   config = lib.mkIf cfg.enable {
-    home.file.".local/share/pandoc".source = config.util.link (root + /dotfiles/pandoc);
+    home.file.".local/share/pandoc".source = config.util.link "/dotfiles/pandoc";
   };
 }

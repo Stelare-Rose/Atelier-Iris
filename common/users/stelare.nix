@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ctx, ... }:
+{ ctx, ... }:
 let 
   # Unwrap ctx here
   root = ctx.root;

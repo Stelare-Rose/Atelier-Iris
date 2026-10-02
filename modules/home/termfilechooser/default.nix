@@ -1,7 +1,6 @@
-{ config, nixcfg, lib, ctx, ... }:
+{ config, nixcfg, lib, ... }:
 let
   cfg = config.home.termfilechooser;
-  root = ctx.root;
 in
   {
   options.home.termfilechooser.enable = lib.mkOption {
@@ -17,8 +16,8 @@ in
       };
     xdg.configFile."xdg-desktop-portal-termfilechooser/config" = {
       force = true;
-      source = config.util.link (root + /dotfiles/termfilechooser/config);
+      source = config.util.link "/dotfiles/termfilechooser/config";
     };
-    xdg.configFile."termfilechooser/yazi-wrapper.sh".source = config.util.link (root + /dotfiles/termfilechooser/yazi-wrapper.sh);
+    xdg.configFile."termfilechooser/yazi-wrapper.sh".source = config.util.link "/dotfiles/termfilechooser/yazi-wrapper.sh";
   };
 }

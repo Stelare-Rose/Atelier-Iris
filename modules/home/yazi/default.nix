@@ -1,7 +1,6 @@
-{ config, nixcfg, lib, ctx, ... }:
+{ config, nixcfg, lib, ... }:
 let
   cfg = config.home.yazi;
-  root = ctx.root;
 in {
   options.home.yazi.enable = lib.mkOption {
     type = lib.types.bool;
@@ -10,6 +9,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."yazi".source = config.util.link (root + /dotfiles/yazi);
+    xdg.configFile."yazi".source = config.util.link "/dotfiles/yazi";
   };
 }

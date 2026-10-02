@@ -1,7 +1,6 @@
-{ config, nixcfg, lib, ctx, ... }:
+{ config, nixcfg, lib, ... }:
 let
   cfg = config.home.waybar;
-  root = ctx.root;
 in {
   options.home.waybar.enable = lib.mkOption {
     type = lib.types.bool;
@@ -10,6 +9,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."waybar".source = config.util.link (root + /dotfiles/waybar);
+    xdg.configFile."waybar".source = config.util.link "/dotfiles/waybar";
   };
 }

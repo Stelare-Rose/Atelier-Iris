@@ -24,7 +24,7 @@ in {
         sopsFile = root + /secrets/common/git/credentials;
         format = "binary";
       };
-      home.file.".config/git/credentials".source = config.util.link config.sops.secrets."git/credentials".path;
+      home.file.".config/git/credentials".source = config.lib.file.mkOutOfStoreSymlink config.sops.secrets."git/credentials".path;
     })
     (lib.mkIf cfg.enable {
       programs.git = {

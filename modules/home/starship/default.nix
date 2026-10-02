@@ -1,7 +1,6 @@
-{ config, nixcfg, lib, ctx, ... }:
+{ config, nixcfg, lib, ... }:
 let
   cfg = config.home.starship;
-  root = ctx.root;
 in {
   options.home.starship.enable = lib.mkOption {
     type = lib.types.bool;
@@ -10,6 +9,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."starship.toml".source = config.util.link (root + /dotfiles/starship/starship.toml);
+    xdg.configFile."starship.toml".source = config.util.link "/dotfiles/starship/starship.toml";
   };
 }

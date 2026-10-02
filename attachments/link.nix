@@ -5,5 +5,5 @@
     internal = true;
   };
   config.util.link = path:
-    config.lib.file.mkOutOfStoreSymlink path;
+    config.lib.file.mkOutOfStoreSymlink (config.iris.repoPath + path);
 }
