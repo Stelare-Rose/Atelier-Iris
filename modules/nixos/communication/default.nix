@@ -9,6 +9,7 @@ in
     environment.systemPackages = with pkgs; [
       vesktop
       unstable.zoom-us
+      element-desktop
     ];
   };
 }
