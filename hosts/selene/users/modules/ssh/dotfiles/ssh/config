@@ -6,3 +6,5 @@ Host github.com-Public
 	HostName github.com
 	IdentityFile ~/.ssh/Public-GitHub
 	IdentitiesOnly yes
+Host *
+  IdentityFile ~/.ssh/Main
