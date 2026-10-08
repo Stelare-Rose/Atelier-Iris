@@ -2,6 +2,7 @@
 {
   imports = [
     ./modules/git
+    ./modules/ssh
   ];
   home.hyprland.monitor = {
     refresh = 165;
