@@ -39,4 +39,7 @@ in
     user.extraImports = [ ./users/stelare.nix ];
     wireguard.secretPath = root + /secrets/selene/wireguard/wg0.conf;
   };
+  users.users.Stelare.openssh.authorizedKeys.keyFiles = [
+    (root + /keys/Crescent.pub)
+  ];
 }

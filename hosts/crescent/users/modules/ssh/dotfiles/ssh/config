@@ -6,6 +6,5 @@ Host github.com-Public
 	HostName github.com
 	IdentityFile ~/.ssh/Public-GitHub
 	IdentitiesOnly yes
-Host 10.255.0.1
-	HostName 10.255.0.1
-	KexAlgorithms=diffie-hellman-group-exchange-sha256
+Host *
+  IdentityFile ~/.ssh/Main
