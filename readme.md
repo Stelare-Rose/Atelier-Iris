@@ -32,11 +32,18 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
     - default.nix
     - home.nix
     - virtual-default.nix
+- keys/...
 - dotfiles/...
 - attachments/...
 - secrets/...
 ```
-Note: common/ files are the "default" configuration for all the hosts, importing all commonly used modules. Overrides for each host is contained in hosts/. default.nix refers to the nixos config, while users/and home.nix refer to the home-manager configuration
+Notes:
+- common/ files are the "default" configuration for all the hosts, importing all commonly used modules. Overrides for each host is contained in hosts/. 
+- default.nix refers to the nixos config, while users/ and home.nix refer to the home-manager configuration.
+- dotfiles/ contain the dotfiles that are used in the configuraton
+- attachments/ contain miscellaneous files that are used in the configuration
+- secrets/ contain the secrets managed by sops-nix
+- keys/ contain public keys for each device
 
 ## Notes
 - Custom Flake Inputs for Zen-browser, and [Horologium](https://git.starrytea.cc/Constellation-Project/Horologium).
