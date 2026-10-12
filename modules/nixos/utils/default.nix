@@ -29,6 +29,7 @@ in
         nautilus
         bitwarden-desktop
       ];
+      services.udev.packages = [ pkgs.via ];
     })
   ];
 }
