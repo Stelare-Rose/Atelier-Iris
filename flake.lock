@@ -64,11 +64,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791389872,
-        "narHash": "sha256-365QCFmj5IkO2Kq4UWQACZYZNycjQJXTNQSNL6G0ojM=",
+        "lastModified": 1791782818,
+        "narHash": "sha256-a1vFQoF28J+O0QZm536c7Kxx4FbDLLBOrFAKUmvUYyE=",
         "ref": "refs/heads/main",
-        "rev": "9b035bf07f2c8cffad305fa3c9c0495c9df5f2ff",
-        "revCount": 115,
+        "rev": "0f1034cf1e25a371635afdf4c21365e403137f05",
+        "revCount": 117,
         "type": "git",
         "url": "https://git.starrytea.cc/Constellation-Project/Horologium.git"
       },
@@ -95,11 +95,11 @@
     },
     "nixpkgs-release": {
       "locked": {
-        "lastModified": 1791765022,
-        "narHash": "sha256-ZGq3ptZzA+oO0N/Wi/F+GbuTijLkYExD01LvpNFAvr0=",
+        "lastModified": 1791779220,
+        "narHash": "sha256-MXXZ5vl4yfe72sVcC98G7UaK7VnySlCiIm3FQcwdswI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7993f34ee47e28a3d607a525aadc6c94b73be728",
+        "rev": "7339b961d10565c2d83ac89f8178c155c64df5c8",
         "type": "github"
       },
       "original": {
