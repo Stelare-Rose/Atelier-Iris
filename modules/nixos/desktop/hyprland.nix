@@ -14,12 +14,15 @@
       swaynotificationcenter
       nvd
       catppuccin-cursors.mochaLavender
+      xwayland-satellite
+      libnotify
     ];
     programs.hyprland = {
       enable = true;
       withUWSM = true;
       xwayland.enable = true;
     };
+    programs.niri.enable = true;
     security = {
       polkit.enable = true;
       pam.services.hyprlock = {};

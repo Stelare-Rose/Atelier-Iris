@@ -21,6 +21,7 @@ in
         doitlive
         ddcutil
         brightnessctl
+        timer
       ];
     })
     (lib.mkIf cfg.gui.enable {
