@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   imports = [
     ../../common/default.nix
@@ -15,6 +15,11 @@
     virtualisation.enable = false;
     wireguard.enable = false;
     user.extraImports = [ ./users/stelare.nix ];
+  };
+
+  virtualisation.vmVariant.virtualisation.sharedDirectories.atelier = {
+    source = config.iris.repoPath;
+    target = "/home/Stelare/Atelier-Iris";
   };
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
