@@ -6,7 +6,7 @@ in
   {
   options.home.hyprland.enable = lib.mkOption {
     type = lib.types.bool;
-    default = nixcfg.modules.desktop.enable;
+    default = nixcfg.modules.desktop.hyprland.enable;
     description = "Enables the home-manager side of hyprland";
   };
   options.home.hyprland.monitor.width = lib.mkOption {

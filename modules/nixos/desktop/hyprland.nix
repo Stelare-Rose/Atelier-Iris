@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  config = lib.mkIf config.modules.desktop.enable {
+  config = lib.mkIf config.modules.desktop.hyprland.enable {
     environment.systemPackages = with pkgs; [
       wlsunset
       wezterm
@@ -22,7 +22,6 @@
       withUWSM = true;
       xwayland.enable = true;
     };
-    programs.niri.enable = true;
     security = {
       polkit.enable = true;
       pam.services.hyprlock = {};

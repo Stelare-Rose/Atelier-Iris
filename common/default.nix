@@ -25,7 +25,10 @@ in
     communication.enable = lib.mkDefault true;
     constellation.enable = lib.mkDefault true;
     creative.enable = lib.mkDefault true;
-    desktop.enable = lib.mkDefault true;
+    desktop = {
+      enable = lib.mkDefault true;
+      niri.enable = lib.mkDefault true;
+    };
     development.enable = lib.mkDefault true;
     downloaders.enable = lib.mkDefault true;
     fonts.enable = lib.mkDefault true;
