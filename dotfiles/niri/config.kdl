@@ -1,4 +1,4 @@
-spawn-sh-at-startup "awww img ~/.config/niri/backgrounds/background.jpg"
+spawn-sh-at-startup "awww img /home/Stelare/.config/niri/backgrounds/background.jpg"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-sh-at-startup "wlsunset -d 1800 -t 5000 -S 8:00 -s 18:00"
@@ -10,6 +10,10 @@ overview { backdrop-color "#DECEC1"; }
 hotkey-overlay { skip-at-startup; }
 
 output "eDP-1" {
+  scale 1.0
+}
+output "DP-1" {
+  mode "1920x1080@165.001"
   scale 1.0
 }
 
@@ -161,7 +165,7 @@ spawn-at-startup "Pyxis"
 spawn-at-startup "element-desktop"
 
 window-rule {
-  match app-id=r#"steam"#
+  match app-id=r#"^steam$"#
   open-on-workspace "steam"
   open-focused false
 }
@@ -173,5 +177,15 @@ window-rule {
 window-rule {
   match app-id=r#"vesktop"#
   open-on-workspace "chat"
+  open-focused false
+}
+window-rule {
+  match app-id="zoom"
+  open-on-workspace "chat"
+}
+window-rule {
+  match title="annotate_toolbar"
+  open-on-workspace "chat"
+  open-floating true
   open-focused false
 }
