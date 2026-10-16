@@ -22,6 +22,7 @@ in
         ddcutil
         brightnessctl
         timer
+        xh
       ];
     })
     (lib.mkIf cfg.gui.enable {
