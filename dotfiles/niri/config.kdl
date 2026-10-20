@@ -51,6 +51,7 @@ layout {
     position "left"
     place-within-column
   }
+  
 }
 recent-windows { off; }
 binds {
@@ -132,6 +133,11 @@ binds {
   Print { screenshot-screen; }
   Mod+Print { screenshot; }
   Shift+Print { screenshot-window; }
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
 }
 
 workspace "1"
