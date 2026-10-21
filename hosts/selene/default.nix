@@ -38,7 +38,6 @@ in
   modules = {
     user.extraImports = [ ./users/stelare.nix ];
     wireguard.secretPath = root + /secrets/selene/wireguard/wg0.conf;
-    k3s.enable = true;
   };
   users.users.Stelare.openssh.authorizedKeys.keyFiles = [
     (root + /keys/Crescent.pub)
