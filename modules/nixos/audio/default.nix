@@ -30,6 +30,25 @@ in
             "default.clock.max-quantum" = 2048;
           };
         };
+        extraConfig.pipewire."99-record-sink" = {
+          "context.modules" = [
+            {
+              name = "libpipewire-module-loopback";
+              args = {
+                "node.description" = "Stream_Sink";
+                "capture.props" = {
+                  "node.name" = "stream_sink";
+                  "media.class" = "Audio/Sink";
+                  "audio.position" = [ "FL" "FR" ];
+                };
+                "playback.props" = {
+                  "node.name" = "stream_sink_out";
+                  "node.passive" = true;
+                };
+              };
+            }
+          ];
+        };
       };
     })
   ];
