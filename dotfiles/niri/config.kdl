@@ -195,3 +195,7 @@ window-rule {
   open-floating true
   open-focused false
 }
+window-rule {
+  match app-id="librewolf"
+  draw-border-with-background false
+}

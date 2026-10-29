@@ -1,0 +1,167 @@
+:root {
+  /* Palette */
+  --foam: #f8f4e9;
+  --cream: #f0e8da;
+  --base: #e6d9c8;
+  --tea: #decec1;
+  --lilac: #dbb4d3;
+  --lavender: #cca3d6;
+  --plum: #aa99d1;
+  --subtext2: #6b564b;
+  --subtext1: #4f453f;
+  --text: #403732;
+  --highlight: #383029;
+
+  /* Window and toolbars */
+  --lwt-accent-color: var(--base) !important;
+  --lwt-text-color: var(--text) !important;
+  --toolbar-background-color: var(--cream) !important;
+  --toolbar-color: var(--text) !important;
+  --toolbarbutton-icon-fill: var(--subtext1) !important;
+  --toolbarbutton-hover-background: var(--tea) !important;
+  --toolbarbutton-active-background: var(--lilac) !important;
+
+  /* Tabs */
+  --tab-selected-bgcolor: var(--foam) !important;
+  --tab-selected-textcolor: var(--text) !important;
+  --tab-loading-fill: var(--lavender) !important;
+
+  /* URL bar */
+  --toolbar-field-background-color: var(--foam) !important;
+  --toolbar-field-color: var(--text) !important;
+  --toolbar-field-border-color: var(--tea) !important;
+  --toolbar-field-focus-background-color: var(--foam) !important;
+  --toolbar-field-focus-border-color: var(--lavender) !important;
+  --urlbar-box-bgcolor: var(--foam) !important;
+  --urlbar-box-hover-bgcolor: var(--tea) !important;
+  --urlbar-background-color-focus: var(--foam) !important;
+
+  /* Panels, menus, sidebar */
+  --arrowpanel-background: var(--foam) !important;
+  --arrowpanel-color: var(--text) !important;
+  --arrowpanel-border-color: var(--tea) !important;
+  --arrowpanel-dimmed: var(--cream) !important;
+  --sidebar-background-color: var(--cream) !important;
+  --sidebar-text-color: var(--text) !important;
+  --sidebar-border-color: var(--tea) !important;
+  --panel-background: #f8f4e9 !important;
+  --panel-color: #403732 !important;
+  --panel-border-color: #decec1 !important;
+  --arrowpanel-background: #f8f4e9 !important;
+  --arrowpanel-color: #403732 !important;
+  --arrowpanel-border-color: #decec1 !important;
+  --menu-background-color: #f8f4e9 !important;
+  --menu-color: #403732 !important;
+
+  /* Accent */
+  --focus-outline-color: var(--lavender) !important;
+  --button-primary-bgcolor: var(--lilac) !important;
+  --button-primary-hover-bgcolor: var(--lavender) !important;
+  --button-primary-color: var(--highlight) !important;
+  --autocomplete-popup-highlight-background: var(--lilac) !important;
+  --autocomplete-popup-highlight-color: var(--highlight) !important;
+}
+#sidebar-container::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon points='12,3.5 14.47,8.6 20.08,9.37 15.99,13.3 17,18.88 12,16.2 7,18.88 8.01,13.3 3.92,9.37 9.53,8.6' fill='%23DBB4D3' stroke='%23DBB4D3' stroke-width='3' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Push the strip's icons below the star */
+sidebar-main {
+  padding-bottom: 40px !important;
+}
+.buttons-wrapper{
+  background-color: var(--cream);
+}
+#identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button, #urlbar-label-box {
+	background-color: var(--tea) !important;
+}
+.button-background {
+	background-color: var(--tea) !important;
+}
+#TabsToolbar {
+  visibility: collapse !important;
+}
+sidebar-panel-header {
+	display: none !important;
+}
+
+:root {
+  --sb-width: 280px;
+}
+
+.panel-viewcontainer {
+  background-color: var(--foam);
+}
+
+#sidebar-box {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 40px !important;
+  width: var(--sb-width) !important;
+  min-width: var(--sb-width) !important;
+  max-width: var(--sb-width) !important;
+  z-index: 10 !important;
+  border-right: 1px solid var(--tea) !important;
+
+  /* hidden state */
+  transform: translateX(-100%) !important;
+  visibility: hidden !important;
+  will-change: transform;
+  transition:
+    transform 0.12s ease-out,
+    visibility 0s linear 0.12s !important;
+}
+
+#browser:has(#sidebar-container:hover) #sidebar-box,
+#sidebar-box:hover,
+#sidebar-box:focus-within,
+#main-window[dragging] #sidebar-box,
+#sidebar-box[dragover="true"] {
+  transform: translateX(0) !important;
+  visibility: visible !important;
+  transition:
+    transform 0.12s ease-out,
+    visibility 0s !important;
+}
+
+#sidebar-container {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 40px !important;
+  z-index: 11 !important;
+  background: var(--cream) !important;
+}
+
+#sidebar-splitter { display: none !important; }
+
+#navigator-toolbox,
+#browser {
+  margin-left: 40px !important;
+}
+
+#main-window,
+#navigator-toolbox,
+#browser {
+  background-color: var(--foam) !important;
+}
+
+#main-window,
+#main-window * {
+  font-family: "Nunito", system-ui, sans-serif !important;
+}
