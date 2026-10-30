@@ -13,6 +13,9 @@ in
         message = "modules.gaming.dawn.enable requires modules.gaming.enable to be true";
       }];
     })
+    (lib.mkIf (config.modules.user.enable && cfg.enable) {
+      users.users.Stelare.extraGroups = [ "video" "render" ];
+    })
     (lib.mkIf cfg.enable {
       environment.systemPackages = with pkgs; [
         steamcmd
