@@ -5,7 +5,7 @@ in
   {
   options.modules.networking.enable = lib.mkEnableOption "networking with 1.1.1.1 dns";
   config = lib.mkMerge [
-    (lib.mkIf config.modules.user.enable {
+    (lib.mkIf (config.modules.user.enable && cfg.enable) {
       users.users.Stelare.extraGroups = [ "networkmanager" ];
     })
     (lib.mkIf cfg.enable {

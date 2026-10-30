@@ -5,7 +5,7 @@ in
   {
   options.modules.audio.enable = lib.mkEnableOption "audio settings (default pipewire-pulse + alsa + jack)";
   config = lib.mkMerge [
-    (lib.mkIf config.modules.user.enable {
+    (lib.mkIf (config.modules.user.enable && cfg.enable) {
       users.users.Stelare.extraGroups = [ "audio" ];
     })
     (lib.mkIf cfg.enable {

@@ -5,7 +5,7 @@ in
   {
   options.modules.virtualisation.enable = lib.mkEnableOption "virtualisation support (libvirt, docker, virt-manager)";
   config = lib.mkMerge [ 
-    (lib.mkIf config.modules.user.enable {
+    (lib.mkIf (config.modules.user.enable && cfg.enable) {
       users.users.Stelare.extraGroups = [ "libvirtd" "docker" ];
     })
     (lib.mkIf cfg.enable {
