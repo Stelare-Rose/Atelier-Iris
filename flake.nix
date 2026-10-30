@@ -17,6 +17,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Constellations
     horologium = {
@@ -29,6 +33,11 @@
       url = "git+https://git.starrytea.cc/Stelare-Rose/Starry-Cursor.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    atelier-camelia = {
+      url = "git+https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia.git";
+      flake = false;
+    };
+
   };
   outputs = {
     self, 
@@ -38,6 +47,7 @@
     sops-nix,
     horologium, 
     cursor,
+    atelier-camelia,
     ... }@inputs: 
     let
       system = "x86_64-linux";

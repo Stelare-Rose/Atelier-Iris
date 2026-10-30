@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "atelier-camelia": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793379239,
+        "narHash": "sha256-m8MVs08ETq/dC1Y6G31zTkw/OUxnp5FVt0G/aMUd6Z8=",
+        "ref": "refs/heads/main",
+        "rev": "64f7d88d7fcf47ae6dec43bd2a4b92cf36dc0a8e",
+        "revCount": 2,
+        "type": "git",
+        "url": "https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia.git"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1787326676,
@@ -79,11 +95,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1792898606,
-        "narHash": "sha256-Mg3rRjsbMqhSMxop5PYMXos8SwAjejrxSgVThTvP9eg=",
+        "lastModified": 1793294725,
+        "narHash": "sha256-loLMnbbS4KhmG2ln9EY6f0YMNCA273Yx02oWYQ9IMeE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1f607aa79b6356ed45d3cd3c8079c196e79efa2c",
+        "rev": "6f06d204d8f2d8761d9da78778745974a3216381",
         "type": "github"
       },
       "original": {
@@ -95,11 +111,11 @@
     },
     "nixpkgs-release": {
       "locked": {
-        "lastModified": 1792972624,
-        "narHash": "sha256-ry0XgykkfLTK5p8PB68FZC0tJBApel70iRJBjwyIZ/s=",
+        "lastModified": 1793378308,
+        "narHash": "sha256-FPOGyQnlvbKCEYKNzBvrPH5UnSWnwLf1qHNF0FRb0hg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1e67485f1727d2f653b370efaaac93434ba2899b",
+        "rev": "f7e078209a295f0919713c326260f706d527697f",
         "type": "github"
       },
       "original": {
@@ -111,11 +127,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1792773339,
-        "narHash": "sha256-rZLrzrC6i+jnTAlvPZHogKDulY7WWDEv9hJeHieO7Zw=",
+        "lastModified": 1793110635,
+        "narHash": "sha256-dhoW6VgFWlaodSY5jrBn+CF2FLmaUvDVgM7+C7T2+NM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
+        "rev": "31ecbaca1bdefa45dffc409f0250bd8039ea0010",
         "type": "github"
       },
       "original": {
@@ -141,14 +157,36 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792651682,
+        "narHash": "sha256-TiCGqLMpNIy7FERewgfKVluPsLVF96uc6x6xwZnMjdQ=",
+        "ref": "refs/heads/master",
+        "rev": "9b0f339b19057f4731bf3b48293307d7ef241671",
+        "revCount": 879,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      }
+    },
     "root": {
       "inputs": {
+        "atelier-camelia": "atelier-camelia",
         "cursor": "cursor",
         "home-manager": "home-manager",
         "horologium": "horologium",
         "nixpkgs": "nixpkgs",
         "nixpkgs-release": "nixpkgs-release",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "quickshell": "quickshell",
         "sops-nix": "sops-nix",
         "zen-browser": "zen-browser"
       }
@@ -160,11 +198,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792809984,
-        "narHash": "sha256-KV+CaZX7QS0hcdKxwGKehDb1jmUgx6lbkTPpaoIW5Nw=",
+        "lastModified": 1793052255,
+        "narHash": "sha256-Y/JIHTnMlOabDfyaSBubWGLDIVGihLEUuoMhFvQKaDo=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "442449fa7b1fe6c692d0103ac9fc8f9e82931cf3",
+        "rev": "60182817ee048ac94b4c68ea76d5ef2e8aac730d",
         "type": "github"
       },
       "original": {
@@ -181,11 +219,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1792963762,
-        "narHash": "sha256-ThRNX0+T2Gb3ZD0Xf+/R3wJdL93/mW80ubMnLjZelTY=",
+        "lastModified": 1793309674,
+        "narHash": "sha256-d1Tvbgn//HQ3f1PDh/iIMEpvuUu9Lc4lJqiwGl18cY8=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "ed68d814d6cf2e221ba43d84f1e32429f5e2786f",
+        "rev": "2656d974602749ca5594b133e3022a241ab5d4e0",
         "type": "github"
       },
       "original": {

@@ -1,6 +1,6 @@
 spawn-sh-at-startup "awww img /home/Stelare/.config/niri/backgrounds/background.jpg"
-spawn-at-startup "waybar"
 spawn-at-startup "swaync"
+spawn-at-startup "quickshell"
 spawn-sh-at-startup "wlsunset -d 1800 -t 5000 -S 8:00 -s 18:00"
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

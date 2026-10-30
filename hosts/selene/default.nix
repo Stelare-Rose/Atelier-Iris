@@ -19,6 +19,9 @@ in
 	hardware.enableRedistributableFirmware = true;
   networking.hostName = "Selene";
   sops.age.keyFile = "/home/Stelare/.config/sops/age/keys.txt";
+  environment.systemPackages = with pkgs; [
+    intel-gpu-tools
+  ];
 	hardware.graphics = {
 		enable = true;
 		extraPackages = with pkgs; [
@@ -29,6 +32,12 @@ in
 			level-zero
 		];
 	};
+  security.wrappers.intel_gpu_top = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_perfmon+ep";
+    source = "${pkgs.intel-gpu-tools}/bin/intel_gpu_top";
+  };
 	services.sunshine = {
 		enable = true;
 		autoStart = true;
@@ -41,6 +50,7 @@ in
       min_log_level = "debug";
     };
 	};
+  
   services.displayManager = {
     autoLogin = {
       enable = true;
