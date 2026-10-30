@@ -10,10 +10,24 @@ in
     })
     (lib.mkIf cfg.enable {
       nixpkgs.config.allowUnfree = true;
+      services.resolved = {
+        enable = true;
+        dnssec = "allow-downgrade";
+        dnsovertls = "opportunistic"; 
+        fallbackDns = [ "1.0.0.1" ];
+        domains = [ "~." ];
+      };
+
       networking = {
-        networkmanager.enable = true;
+        networkmanager = {
+          enable = true;
+          dns = "systemd-resolved";
+        };
         usePredictableInterfaceNames = false;
-        nameservers = [ "1.1.1.1" ];
+        nameservers = [ 
+          "1.1.1.1#one.one.one.one"
+          "1.0.0.1#one.one.one.one"
+        ];
         useNetworkd = true;
       };
       services.cloudflare-warp = {
