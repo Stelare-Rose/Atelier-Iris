@@ -17,6 +17,7 @@ in
         message = "Wireguard requires secret file to be set";
       } 
     ];
+    networking.firewall.trustedInterfaces = [ "wg0" ];
     sops.secrets."wg0-conf" = {
       sopsFile = cfg.secretPath;
       format = "binary";
