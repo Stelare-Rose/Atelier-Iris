@@ -34,7 +34,20 @@ in
 		autoStart = true;
 		capSysAdmin = true;	
     openFirewall = true;
+    settings = {
+      capture = "wlr";
+      encoder = "vaapi";
+      adapter_name = "/dev/dri/renderD128";
+      min_log_level = "debug";
+    };
 	};
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "Stelare";
+    };
+    defaultSession = "niri";
+  };
   modules = {
     user.extraImports = [ ./users/stelare.nix ];
     wireguard.secretPath = root + /secrets/selene/wireguard/wg0.conf;
