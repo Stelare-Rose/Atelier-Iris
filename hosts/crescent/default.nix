@@ -18,4 +18,5 @@ in
   users.users.Stelare.openssh.authorizedKeys.keyFiles = [
     (root + /keys/Selene.pub)
   ];
+  services.upower.enable = true;
 }
