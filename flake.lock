@@ -3,11 +3,11 @@
     "atelier-camelia": {
       "flake": false,
       "locked": {
-        "lastModified": 1793379239,
-        "narHash": "sha256-m8MVs08ETq/dC1Y6G31zTkw/OUxnp5FVt0G/aMUd6Z8=",
+        "lastModified": 1793382652,
+        "narHash": "sha256-VmMs7QHre2LccFz/fnTM7Zai8xQmZyTJTwprLR0iwz0=",
         "ref": "refs/heads/main",
-        "rev": "64f7d88d7fcf47ae6dec43bd2a4b92cf36dc0a8e",
-        "revCount": 2,
+        "rev": "d4581670012ac4191793c633f99d841152947c60",
+        "revCount": 3,
         "type": "git",
         "url": "https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia.git"
       },
@@ -80,11 +80,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791782818,
-        "narHash": "sha256-a1vFQoF28J+O0QZm536c7Kxx4FbDLLBOrFAKUmvUYyE=",
+        "lastModified": 1793556254,
+        "narHash": "sha256-OQVvbgM6QjeNSVdOTimqE8oVPd2Q8zpNK3bQxj6Zep8=",
         "ref": "refs/heads/main",
-        "rev": "0f1034cf1e25a371635afdf4c21365e403137f05",
-        "revCount": 117,
+        "rev": "89f38b9d3b97f0f1eaa8a102afccba8c666a7b51",
+        "revCount": 119,
         "type": "git",
         "url": "https://git.starrytea.cc/Constellation-Project/Horologium.git"
       },
@@ -95,11 +95,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1793294725,
-        "narHash": "sha256-loLMnbbS4KhmG2ln9EY6f0YMNCA273Yx02oWYQ9IMeE=",
+        "lastModified": 1793410479,
+        "narHash": "sha256-HzgjxrLY4AEc0044ZuM5CHbLSWLZgDlay1idmzvvpJs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6f06d204d8f2d8761d9da78778745974a3216381",
+        "rev": "fa1373130d5a21c040a47c5dbe1913d59ed91808",
         "type": "github"
       },
       "original": {
@@ -111,11 +111,11 @@
     },
     "nixpkgs-release": {
       "locked": {
-        "lastModified": 1793378308,
-        "narHash": "sha256-FPOGyQnlvbKCEYKNzBvrPH5UnSWnwLf1qHNF0FRb0hg=",
+        "lastModified": 1793571983,
+        "narHash": "sha256-hwLE3wUw9gnplbv1I4EaB92BecfYK4P0sl84SmB5SPs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f7e078209a295f0919713c326260f706d527697f",
+        "rev": "64aec40e18595d342f25f120069f2cb63c3947b4",
         "type": "github"
       },
       "original": {
@@ -127,11 +127,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1793110635,
-        "narHash": "sha256-dhoW6VgFWlaodSY5jrBn+CF2FLmaUvDVgM7+C7T2+NM=",
+        "lastModified": 1793341285,
+        "narHash": "sha256-Y1CiZ4SoBUjLQyQM/pY+rS2dXD3CHLPstF0lmOc73D4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "31ecbaca1bdefa45dffc409f0250bd8039ea0010",
+        "rev": "1c89083e451e891152365b799595cf7790a43325",
         "type": "github"
       },
       "original": {
@@ -219,11 +219,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1793309674,
-        "narHash": "sha256-d1Tvbgn//HQ3f1PDh/iIMEpvuUu9Lc4lJqiwGl18cY8=",
+        "lastModified": 1793498088,
+        "narHash": "sha256-1MkvkLk4WEJkPrKvCZa3wapvXmdmNAgjh7Ap97GUqVQ=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "2656d974602749ca5594b133e3022a241ab5d4e0",
+        "rev": "536b03dea1ab7460afd44565e81f0a72c371c70f",
         "type": "github"
       },
       "original": {
