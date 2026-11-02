@@ -20,6 +20,14 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "kotlin",
+  callback = function()
+    vim.bo.equalprg = "(ktlint --format --stdin --log-level=none 2>/dev/null)"
+  end,
+})
+
 require("noice").setup({
 	lsp = {
 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -272,6 +280,7 @@ vim.lsp.enable('jdtls')
 vim.lsp.enable('dartls')
 vim.lsp.enable('svelte')
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('kotlin_language_server')
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
