@@ -1,8 +1,8 @@
 from: gfm+wikilinks_title_after_pipe
 pdf-engine: lualatex
 standalone: true
- 
-highlight-style: ${.}/milktea.theme
+
+highlight-style: ${.}/milktea-bw.theme
 
 include-in-header:
   - ${.}/format.tex
