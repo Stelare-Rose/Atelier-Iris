@@ -17,6 +17,8 @@ in
     communication.enable = false;
     creative.enable = false;
     desktop.enable = false;
+    desktop.hyprland.enable = false;
+    desktop.niri.enable = false;
     fonts.enable = false;
     gaming.enable = false;
     media.viewing.enable = false;
