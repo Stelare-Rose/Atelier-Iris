@@ -1,4 +1,4 @@
-{ ctx, ... }:
+{ config, ctx, ... }:
 let
   root = ctx.root;
 in {
@@ -6,7 +6,7 @@ in {
     "Main" = {
       sopsFile = root + /secrets/copernicus/ssh/Main;
       format = "binary";
-      path = "/home/Stelare/.ssh/Main";
+      path = "${config.home.homeDirectory}/.ssh/Main";
     };
   };
   home.file = {
