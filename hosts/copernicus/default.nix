@@ -34,6 +34,8 @@ in
     (root + /keys/Nocturne.pub)
   ];
 
+  boot.loader.systemd-boot.enable = true;
+
   networking.firewall.allowedTCPPorts = [ 22 111 2049 3000 5000 8384 22000 25565 25566 ];
   networking.firewall.allowedUDPPorts = [ 22 5000 21027 22000 24454 25565 25566 ];
 
