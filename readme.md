@@ -46,7 +46,7 @@ Notes:
 - keys/ contain public keys for each device
 
 ## Notes
-- Custom Flake Inputs for Zen-browser, and [Horologium](https://git.starrytea.cc/Constellation-Project/Horologium).
+- Custom Flake Inputs for Zen-browser, [Custom Cursor](https://git.starrytea.cc/Stelare-Rose/Starry-Cursor), [Atelier-Camelia](https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia) and [Horologium](https://git.starrytea.cc/Constellation-Project/Horologium).
 - Currently uses a local impure package for [Pyxis](https://github.com/Stelare-Rose/Pyxis) because Pyxis hasn't been updated to use a flake.
 - Uses a Forgejo Action every Monday to run `nix flake update` and push to the repo, making flake version updates centralized.
 
