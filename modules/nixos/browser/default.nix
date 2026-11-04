@@ -9,7 +9,7 @@ in
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ 
-      inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       # Chromium is included here because firefox issues.
       chromium
       (callPackage (root + "/attachments/aster/aster.nix") {})
