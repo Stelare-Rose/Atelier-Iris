@@ -88,9 +88,7 @@
       packages.${system}.pyxis = pkgs.callPackage /home/Stelare/Sync/Programming/Git/Pyxis/default.nix { };
       nixosConfigurations.Selene = mkHost [ ./hosts/selene ];
       nixosConfigurations.Crescent = mkHost [ ./hosts/crescent ]; 
-
-      # Server Configuration, Doesn't use Default.
-      nixosConfigurations.Copernicus = mkHost [ ];
+      nixosConfigurations.Copernicus = mkHost [ ./hosts/copernicus ];
 
       # Stripped VM Configuration
       nixosConfigurations.Nyx = mkHost [ ./hosts/nyx ];
