@@ -44,11 +44,11 @@ in
     shell.enable = lib.mkDefault true;
     ssh.enable = lib.mkDefault true;
     syncthing.enable = lib.mkDefault true;
+    tailscale.enable = lib.mkDefault true;
     user.enable = lib.mkDefault true;
     utils.enable = lib.mkDefault true;
     utils.gui.enable = lib.mkDefault true;
     virtualisation.enable = lib.mkDefault true;
-    wireguard.enable = lib.mkDefault true;
   };
     
   time.timeZone = lib.mkDefault "Asia/Jakarta";
