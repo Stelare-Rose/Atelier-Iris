@@ -157,6 +157,22 @@
         "type": "github"
       }
     },
+    "pyxis": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789526612,
+        "narHash": "sha256-GGFwkQ6pCoPpo7PNNqAJ6Am9GLmNbLCQHD8F4fp7yJY=",
+        "owner": "Stelare-Rose",
+        "repo": "Pyxis",
+        "rev": "78108776c80a3fd9702664730a6b25e2914320cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Stelare-Rose",
+        "repo": "Pyxis",
+        "type": "github"
+      }
+    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -186,6 +202,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-release": "nixpkgs-release",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "pyxis": "pyxis",
         "quickshell": "quickshell",
         "sops-nix": "sops-nix",
         "zen-browser": "zen-browser"

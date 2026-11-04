@@ -37,6 +37,10 @@
       url = "git+https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia.git";
       flake = false;
     };
+    pyxis = {
+      url = "github:Stelare-Rose/Pyxis";
+      flake = false;
+    };
 
   };
   outputs = {
@@ -48,6 +52,7 @@
     horologium, 
     cursor,
     atelier-camelia,
+    pyxis,
     ... }@inputs: 
     let
       system = "x86_64-linux";
@@ -83,9 +88,13 @@
       };
     in
       {
-      # Temporary Pyxis-MVP import
-      # TODO: Swap Pyxis to a Flake
-      packages.${system}.pyxis = pkgs.callPackage /home/Stelare/Sync/Programming/Git/Pyxis/default.nix { };
+      # Pyxis (non-flake source, plain default.nix)
+      # Upstream default.nix expects a pre-built .deb not present in the git tree,
+      # so src is overridden with a vendored copy from attachments/
+      packages.${system}.pyxis =
+        (import (pyxis + "/default.nix") { inherit pkgs; }).overrideAttrs (old: {
+          src = ./attachments/pyxis/Pyxis_0.1.0_amd64.deb;
+        });
       nixosConfigurations.Selene = mkHost [ ./hosts/selene ];
       nixosConfigurations.Crescent = mkHost [ ./hosts/crescent ]; 
       nixosConfigurations.Copernicus = mkHost [ ./hosts/copernicus ];
