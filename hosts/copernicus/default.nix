@@ -6,6 +6,7 @@ in
   {
   imports = [
     ../../common/default.nix
+    ./hardware.nix
     ./services
   ];
   networking.hostName = "Copernicus"; 
