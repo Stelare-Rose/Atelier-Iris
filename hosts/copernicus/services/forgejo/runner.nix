@@ -1,6 +1,7 @@
-{ config, pkgs, unstable, ctx, ... }:
+{ config, pkgs, ctx, ... }:
 let
   root = ctx.root;
+  unstable = ctx.unstable;
 in
 {
   sops.secrets."forgejo-runner-token" = {
@@ -14,7 +15,6 @@ in
       enable = true;
       url = "http://localhost:3000";
       labels = [ "native:host" ];
-      token = "";
       tokenFile = config.sops.secrets."forgejo-runner-token".path;
       hostPackages = with pkgs; [ nix git bash coreutils openssh nodejs ];
       settings = {

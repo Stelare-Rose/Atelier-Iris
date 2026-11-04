@@ -1,4 +1,7 @@
-{ unstable, ... }:
+{ ctx, ... }:
+let
+  unstable = ctx.unstable;
+in
 {
   services.immich = {
     package = unstable.immich;
