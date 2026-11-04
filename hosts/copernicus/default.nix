@@ -14,6 +14,7 @@ in
   modules = {
     audio.enable = false;
     browser.enable = false;
+    boot.enable = false;
     communication.enable = false;
     creative.enable = false;
     desktop.enable = false;
@@ -34,7 +35,11 @@ in
     (root + /keys/Nocturne.pub)
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 0;
+  };
 
   networking.firewall.allowedTCPPorts = [ 22 111 2049 3000 5000 8384 22000 25565 25566 ];
   networking.firewall.allowedUDPPorts = [ 22 5000 21027 22000 24454 25565 25566 ];
