@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  config = lib.mkIf config.modules.desktop.hyprland.enable {
+  config = lib.mkIf (config.modules.desktop.hyprland.enable && config.modules.desktop.enable) {
     environment.systemPackages = with pkgs; [
       wlsunset
       wezterm

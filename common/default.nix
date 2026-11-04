@@ -34,6 +34,7 @@ in
     fonts.enable = lib.mkDefault true;
     gaming.enable = lib.mkDefault true;
     media = {
+      enable = lib.mkDefault true;
       viewing.enable = lib.mkDefault true;
       production.enable = lib.mkDefault true;
     };

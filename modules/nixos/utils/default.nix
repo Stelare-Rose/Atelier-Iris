@@ -25,7 +25,7 @@ in
         xh
       ];
     })
-    (lib.mkIf cfg.gui.enable {
+    (lib.mkIf (cfg.gui.enable && cfg.enable) {
       environment.systemPackages = with pkgs; [
         via
         nautilus

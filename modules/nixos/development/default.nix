@@ -16,7 +16,7 @@ in
       modules.development.utilities.enable = lib.mkDefault true;
       modules.development.game.enable = lib.mkDefault true;
     })
-    (lib.mkIf cfg.android.enable {
+    (lib.mkIf (cfg.android.enable && cfg.enable) {
       nixpkgs.config.android_sdk.accept_license = true;
       environment.systemPackages = with pkgs; [
         android-tools
@@ -34,10 +34,10 @@ in
         }) 
       ];
     })
-    (lib.mkIf (cfg.android.enable && config.modules.user.enable) {
+    (lib.mkIf (cfg.android.enable && cfg.enable && config.modules.user.enable) {
       users.users.Stelare.extraGroups = [ "adbusers" "kvm" ];
     })
-    (lib.mkIf cfg.databases.enable {
+    (lib.mkIf (cfg.databases.enable && cfg.enable) {
       environment.systemPackages = with pkgs; [
         sqlcmd
         mysql84
@@ -48,7 +48,7 @@ in
         package = pkgs.mysql84;
       };
     })
-    (lib.mkIf cfg.utilities.enable {
+    (lib.mkIf (cfg.utilities.enable && cfg.enable) {
       environment.systemPackages = with pkgs; [
         unstable.opencode
         tokei
@@ -59,7 +59,7 @@ in
         git
       ];
     })
-    (lib.mkIf cfg.game.enable {
+    (lib.mkIf (cfg.game.enable && cfg.enable) {
       environment.systemPackages = with pkgs; [
         godot
         godot-mono

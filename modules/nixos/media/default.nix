@@ -3,10 +3,11 @@ let
   cfg = config.modules.media;
 in
   {
+  options.modules.media.enable = lib.mkEnableOption "media viewing and production programs";
   options.modules.media.viewing.enable = lib.mkEnableOption "media viewing programs";
   options.modules.media.production.enable = lib.mkEnableOption "media production programs";
   config = lib.mkMerge [
-    (lib.mkIf cfg.viewing.enable {
+    (lib.mkIf (cfg.viewing.enable && cfg.enable) {
       environment.systemPackages = with pkgs; [
         mpv
         vlc
@@ -18,7 +19,7 @@ in
         "video/webm" = "mpv.desktop";
       };
     })
-    (lib.mkIf cfg.production.enable {
+    (lib.mkIf (cfg.production.enable && cfg.enable) {
       environment.systemPackages = with pkgs; [
         ffmpeg
         audacity

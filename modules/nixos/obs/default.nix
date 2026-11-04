@@ -16,7 +16,7 @@ in
         enableVirtualCamera = true;
       };
     })
-    (lib.mkIf cfg.droidcam.enable {
+    (lib.mkIf (cfg.droidcam.enable && cfg.enable) {
       environment.systemPackages = with pkgs; [
         droidcam
       ];
