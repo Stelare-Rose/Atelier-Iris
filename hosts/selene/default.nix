@@ -64,5 +64,6 @@ in
   };
   users.users.Stelare.openssh.authorizedKeys.keyFiles = [
     (root + /keys/Crescent.pub)
+    (root + /keys/Nocturne.pub)
   ];
 }

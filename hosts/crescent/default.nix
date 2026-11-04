@@ -17,6 +17,7 @@ in
   };
   users.users.Stelare.openssh.authorizedKeys.keyFiles = [
     (root + /keys/Selene.pub)
+    (root + /keys/Nocturne.pub)
   ];
   services.upower.enable = true;
 }
