@@ -1,4 +1,7 @@
 spawn-sh-at-startup "awww img /home/Stelare/.config/niri/backgrounds/background.jpg"
+spawn-sh-at-startup "wl-paste --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-at-startup "swaync"
 spawn-at-startup "quickshell"
 spawn-sh-at-startup "wlsunset -d 1800 -t 5000 -S 8:00 -s 18:00"
@@ -6,6 +9,9 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 blur { off; }
 environment { GTK_USE_PORTAL "1"; }
+clipboard {
+    disable-primary
+}
 overview { 
   backdrop-color "#DECEC1"; 
 }
@@ -142,6 +148,8 @@ binds {
 
   Mod+Shift+F { fullscreen-window; }
   Mod+M { maximize-column; }
+
+  Mod+Shift+V { spawn-sh "cliphist list | dmenu | cliphist decode | wl-copy"; }
   
   Ctrl+Alt+Delete { quit; }
   Print { screenshot-screen; }

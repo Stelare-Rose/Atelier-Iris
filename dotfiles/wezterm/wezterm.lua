@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+config.enable_wayland = true
 -- Font
 config.font = wezterm.font("MonaspiceNe Nerd Font Propo", {weight="Regular", stretch="Normal", style="Normal"})
 config.font_size = 11
@@ -72,8 +73,8 @@ end)
 wezterm.on('toggle-solid-bg', function(window, pane)
   local overrides = window:get_config_overrides() or {}
 
-  if overrides.window_background_opacity == 1.0 and overrides.colors and overrides.colors.background == '#38312d' then
-    -- revert back to your normal config (clear overrides)
+  if overrides.window_background_opacity == 1.0 then
+
     overrides.window_background_opacity = nil
     overrides.colors = nil
   else
@@ -83,7 +84,6 @@ wezterm.on('toggle-solid-bg', function(window, pane)
 
   window:set_config_overrides(overrides)
 end)
-
 -- Keybinds
 config.keys = {
   {
@@ -96,7 +96,7 @@ config.keys = {
     mods = 'CTRL|SHIFT',
     action = act.EmitEvent 'toggle-solid-bg',
   },
+  { key = 'V', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
 }
-
 
 return config

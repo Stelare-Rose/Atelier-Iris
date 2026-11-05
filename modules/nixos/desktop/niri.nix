@@ -8,7 +8,10 @@
       wayland-utils
       waybar
       hyprlock
-      wl-clipboard-rs
+      wl-clipboard
+      cliphist
+      wl-clip-persist
+      dmenu
       swaynotificationcenter
       xwayland-satellite
       libnotify

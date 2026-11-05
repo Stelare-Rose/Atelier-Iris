@@ -4,7 +4,7 @@
     environment.systemPackages = with pkgs; [
       wlsunset
       wezterm
-      wl-clipboard-rs
+      wl-clipboard
       libinput
       wayland-utils
       waybar
