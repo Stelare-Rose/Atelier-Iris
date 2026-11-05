@@ -150,6 +150,7 @@ binds {
   Mod+M { maximize-column; }
 
   Mod+Shift+V { spawn-sh "cliphist list | dmenu | cliphist decode | wl-copy"; }
+  Mod+F { spawn-sh r#"pkill rofi || rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | wl-copy" -kb-accept-custom 'Control+Return'"#; }
   
   Ctrl+Alt+Delete { quit; }
   Print { screenshot-screen; }
