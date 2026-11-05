@@ -12,7 +12,6 @@
       cliphist
       wl-clip-persist
       dmenu
-      swaynotificationcenter
       xwayland-satellite
       libnotify
       ddcutil
