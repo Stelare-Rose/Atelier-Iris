@@ -47,15 +47,13 @@ Notes:
 
 ## Notes
 - Custom Flake Inputs for Zen-browser, [Custom Cursor](https://git.starrytea.cc/Stelare-Rose/Starry-Cursor), [Atelier-Camelia](https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia) and [Horologium](https://git.starrytea.cc/Constellation-Project/Horologium).
-- Currently uses a local impure package for [Pyxis](https://github.com/Stelare-Rose/Pyxis) because Pyxis hasn't been updated to use a flake.
+- Currently uses a local package for [Pyxis](https://github.com/Stelare-Rose/Pyxis) because Pyxis hasn't been updated to use a flake.
 - Uses a Forgejo Action every Monday to run `nix flake update` and push to the repo, making flake version updates centralized.
 
 ## Usage
 ```bash
-sudo nixos-rebuild switch --flake ~/Atelier-Iris#<flake> --impure
+sudo nixos-rebuild switch --flake ~/Atelier-Iris#<flake>
 ```
-Note that impure is (currently) required for Pyxis
-
 ## Requirements
 - NixOS with Flakes Enabled
 - Note that specific flakes may have specific hardware configurations (e.g. Monitor Size), so may not function properly on certain hardware.
