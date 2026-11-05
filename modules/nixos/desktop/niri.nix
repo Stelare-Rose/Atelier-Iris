@@ -15,7 +15,13 @@
       swaynotificationcenter
       xwayland-satellite
       libnotify
+      ddcutil
+      brightnessctl
+      pulseaudio
     ];
     programs.niri.enable = true;
+    hardware.i2c.enable = true;                    
+    services.udev.packages = [ pkgs.brightnessctl ];
+    users.users.Stelare.extraGroups = [ "i2c" "video" ];
   };
 }
