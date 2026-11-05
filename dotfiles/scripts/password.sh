@@ -1,1 +1,1 @@
-echo -n "$(cat ~/.passwords/pass.txt)" | base64 | wl-copy
+echo -n "$(cat ~/.passwords/pass.txt)" | base64 | wl-copy --sensitive

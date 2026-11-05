@@ -3,11 +3,11 @@
     "atelier-camelia": {
       "flake": false,
       "locked": {
-        "lastModified": 1793891533,
-        "narHash": "sha256-2Zy2/vx6uQ5tZ4Kp4FKXzeThwgRW/M4s8uHtPmu+BJ4=",
+        "lastModified": 1793893738,
+        "narHash": "sha256-4aeTFofEDhpiHAJIR9u0FPJtXp8zbvDRU/P6c/oxNSs=",
         "ref": "refs/heads/main",
-        "rev": "88a7cc43717e6428ccbdf3734d0cbcbce67780b7",
-        "revCount": 9,
+        "rev": "395edc788a4c31638b86822929229c2943eb3e8f",
+        "revCount": 10,
         "type": "git",
         "url": "https://git.starrytea.cc/Stelare-Rose/Atelier-Camelia.git"
       },

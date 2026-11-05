@@ -77,8 +77,8 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
   
   Mod+Q hotkey-overlay-title="Open Wezterm" { spawn "wezterm"; }
-  Mod+Space hotkey-overlay-title="Cycle Rofi" { spawn-sh "pkill rofi || rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -display-drun 'Run'"; }
-  Ctrl+Space hotkey-overlay-title="Cycle Rofi" { spawn-sh "pkill rofi || rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -display-drun 'Run'"; }
+  Mod+Space hotkey-overlay-title="Cycle Rofi" { spawn-sh "qs ipc call launcher toggle"; }
+  Ctrl+Space hotkey-overlay-title="Cycle Rofi" { spawn-sh "qs ipc call launcher toggle"; }
   Mod+Ctrl+L hotkey-overlay-title="Lock" { spawn "hyprlock"; }
 
   Mod+O repeat=false { toggle-overview; }
@@ -148,8 +148,7 @@ binds {
   Mod+Shift+F { fullscreen-window; }
   Mod+M { maximize-column; }
 
-  Mod+Shift+V { spawn-sh "cliphist list | dmenu | cliphist decode | wl-copy"; }
-  Mod+F { spawn-sh r#"pkill rofi || rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | wl-copy" -kb-accept-custom 'Control+Return'"#; }
+  Mod+Shift+V { spawn-sh "qs ipc call launcher toggleClipboard"; }
   
   Ctrl+Alt+Delete { quit; }
   Print { screenshot-screen; }

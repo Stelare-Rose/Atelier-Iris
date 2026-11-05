@@ -17,6 +17,7 @@
       ddcutil
       brightnessctl
       pulseaudio
+      libqalculate
     ];
     programs.niri.enable = true;
     hardware.i2c.enable = true;                    

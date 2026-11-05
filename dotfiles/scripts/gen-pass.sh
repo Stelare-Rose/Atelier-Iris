@@ -1,1 +1,1 @@
-openssl rand -base64 $1 | wl-copy
+openssl rand -base64 $1 | wl-copy --sensitive
