@@ -277,7 +277,17 @@ vim.lsp.config('astro', {
     typescript = { tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib" },
   },
 })
-
+vim.lsp.config('jdtls', {
+  settings = {
+    java = {
+      import = {
+        gradle = {
+          arguments = { '--dependency-verification=lenient' },
+        },
+      },
+    },
+  },
+})
 vim.lsp.enable('qmlls')
 vim.lsp.enable("emmet_language_server")
 vim.lsp.enable("csharp_ls")
