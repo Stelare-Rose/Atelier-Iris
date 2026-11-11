@@ -163,6 +163,8 @@ binds {
 
   Mod+Ctrl+MouseBack { move-workspace-to-monitor-left; }
   Mod+Ctrl+MouseForward { move-workspace-to-monitor-right; }
+
+  Mod+Shift+M repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
 }
 
 window-rule {

@@ -18,6 +18,7 @@
       brightnessctl
       pulseaudio
       libqalculate
+      wl-mirror
     ];
     programs.niri.enable = true;
     hardware.i2c.enable = true;                    
