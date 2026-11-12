@@ -41,6 +41,7 @@ in {
         vimtex
         coc-vimtex
         cmp-vimtex
+        conform-nvim
       ];
     };
   };

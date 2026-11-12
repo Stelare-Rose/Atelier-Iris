@@ -240,6 +240,18 @@ vim.lsp.config("eslint", {
     "vue",
   },
 })
+require("conform").setup({
+  formatters_by_ft = {
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    svelte = { "prettier" },
+    css = { "prettier" },
+    html = { "prettier" },
+    json = { "prettier" },
+    markdown = { "prettier" },
+  },
+  format_on_save = { timeout_ms = 1000, lsp_format = "fallback" },
+})
 vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true }, })
 require("flutter-tools").setup{}
 vim.lsp.config("clangd", {
@@ -255,6 +267,7 @@ vim.lsp.opts = {
 		},
 	},
 }
+
 vim.lsp.config("vue_ls", {})
 vim.lsp.config('rust_analyzer', {
   cmd = { 'rust-analyzer' },
