@@ -165,3 +165,26 @@ sidebar-panel-header {
 #main-window * {
   font-family: "Nunito", system-ui, sans-serif !important;
 }
+
+/* Fullscreen: remove the reserved space and background */
+#main-window[inFullscreen] #navigator-toolbox {
+  margin-left: 0 !important;
+  background-color: transparent !important;
+}
+
+#main-window[inFullscreen] #browser {
+  margin-left: 0 !important;
+}
+
+#main-window[inFullscreen] #TabsToolbar {
+  display: none !important;
+}
+
+/* Hide the sidebar strip too, so nothing sits over the page */
+#main-window[inFullscreen] #sidebar-container {
+  display: none !important;
+}
+
+#main-window[inFullscreen] #sidebar-box {
+  display: none !important;
+}
