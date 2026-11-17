@@ -20,6 +20,7 @@
       libqalculate
       wl-mirror
     ];
+    programs.kdeconnect.enable = true;
     programs.niri.enable = true;
     hardware.i2c.enable = true;                    
     services.udev.packages = [ pkgs.brightnessctl ];
