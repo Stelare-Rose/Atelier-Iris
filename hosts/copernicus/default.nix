@@ -1,4 +1,4 @@
-{ ctx, ... }:
+{ ctx, pkgs, ... }:
 let
   inputs = ctx.inputs;
   root = ctx.root;
@@ -11,6 +11,10 @@ in
   ];
   networking.hostName = "Copernicus"; 
   sops.age.keyFile = "/home/Stelare/.config/sops/age/keys.txt";
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_16;
+  };
   modules = {
     audio.enable = false;
     browser.enable = false;
