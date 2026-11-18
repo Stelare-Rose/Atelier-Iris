@@ -10,6 +10,7 @@ in
   ];
 
   programs.home-manager.enable = true;
+  home.links.enable = true;
   home.file.".manual".source = config.util.link "/dotfiles/manual";
   home = {
     username = "Stelare";
