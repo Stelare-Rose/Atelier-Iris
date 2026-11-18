@@ -49,5 +49,6 @@ in
     cae.enable = false;
     StarT.enable = false;
     sunlit.enable = false;
+    cabin.enable = true;
   };
 }
