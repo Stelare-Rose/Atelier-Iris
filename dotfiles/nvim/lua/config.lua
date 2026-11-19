@@ -277,11 +277,11 @@ require("conform").setup({
 })
 vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true }, })
 require("flutter-tools").setup{}
-vim.lsp.config("clangd", {
-	cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
-	nit_options = {
-		fallbackFlags = { "-std=c++17" },
-	},
+vim.lsp.config('clangd', {
+  cmd = {
+    'clangd',
+    '--query-driver=/nix/store/*/bin/*g++*,/run/current-system/sw/bin/*g++*',
+  },
 })
 vim.lsp.opts = {
 	servers = {
