@@ -21,5 +21,7 @@ in
       ];
       extraConfig = builtins.readFile (root + /dotfiles/tmux/extraConfig.conf);
     };
+    xdg.configFile."tmux/dark.conf".source = config.util.link "/dotfiles/tmux/dark.conf";
+    xdg.configFile."tmux/light.conf".source = config.util.link "/dotfiles/tmux/light.conf";
   };
 }

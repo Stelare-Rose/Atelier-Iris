@@ -1,5 +1,5 @@
 :root {
-  /* Palette */
+  /* Palette: light */
   --foam: #f8f4e9;
   --cream: #f0e8da;
   --base: #e6d9c8;
@@ -11,7 +11,23 @@
   --subtext1: #4f453f;
   --text: #403732;
   --highlight: #383029;
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Palette: dark */
+    --foam: #6b564b;
+    --cream: #4f453f;
+    --base: #403732;
+    --tea: #383029;
+    --subtext2: #decec1;
+    --subtext1: #e6d9c8;
+    --text: #f0e8da;
+    --highlight: #f8f4e9;
+  }
+}
+
+:root {
   /* Window and toolbars */
   --lwt-accent-color: var(--base) !important;
   --lwt-text-color: var(--text) !important;
@@ -31,9 +47,11 @@
   --toolbar-field-color: var(--text) !important;
   --toolbar-field-border-color: var(--tea) !important;
   --toolbar-field-focus-background-color: var(--foam) !important;
+  --toolbar-field-focus-color: var(--text) !important;
   --toolbar-field-focus-border-color: var(--lavender) !important;
   --urlbar-box-bgcolor: var(--foam) !important;
   --urlbar-box-hover-bgcolor: var(--tea) !important;
+  --urlbar-box-text-color: var(--text) !important;
   --urlbar-background-color-focus: var(--foam) !important;
 
   /* Panels, menus, sidebar */
@@ -41,17 +59,14 @@
   --arrowpanel-color: var(--text) !important;
   --arrowpanel-border-color: var(--tea) !important;
   --arrowpanel-dimmed: var(--cream) !important;
+  --panel-background: var(--foam) !important;
+  --panel-color: var(--text) !important;
+  --panel-border-color: var(--tea) !important;
+  --menu-background-color: var(--foam) !important;
+  --menu-color: var(--text) !important;
   --sidebar-background-color: var(--cream) !important;
   --sidebar-text-color: var(--text) !important;
   --sidebar-border-color: var(--tea) !important;
-  --panel-background: #f8f4e9 !important;
-  --panel-color: #403732 !important;
-  --panel-border-color: #decec1 !important;
-  --arrowpanel-background: #f8f4e9 !important;
-  --arrowpanel-color: #403732 !important;
-  --arrowpanel-border-color: #decec1 !important;
-  --menu-background-color: #f8f4e9 !important;
-  --menu-color: #403732 !important;
 
   /* Accent */
   --focus-outline-color: var(--lavender) !important;
@@ -60,7 +75,18 @@
   --button-primary-color: var(--highlight) !important;
   --autocomplete-popup-highlight-background: var(--lilac) !important;
   --autocomplete-popup-highlight-color: var(--highlight) !important;
+
+  --sb-width: 280px;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Lilac is light, so keep text on it dark in dark mode */
+    --button-primary-color: #383029 !important;
+    --autocomplete-popup-highlight-color: #383029 !important;
+  }
+}
+
 #sidebar-container::after {
   content: "";
   position: absolute;
@@ -78,28 +104,29 @@
   z-index: 1;
 }
 
-/* Push the strip's icons below the star */
 sidebar-main {
   padding-bottom: 40px !important;
 }
-.buttons-wrapper{
+
+.buttons-wrapper {
   background-color: var(--cream);
 }
-#identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button, #urlbar-label-box {
-	background-color: var(--tea) !important;
+
+#identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button,
+#urlbar-label-box {
+  background-color: var(--tea) !important;
 }
+
 .button-background {
-	background-color: var(--tea) !important;
+  background-color: var(--tea) !important;
 }
+
 #TabsToolbar {
   visibility: collapse !important;
 }
-sidebar-panel-header {
-	display: none !important;
-}
 
-:root {
-  --sb-width: 280px;
+sidebar-panel-header {
+  display: none !important;
 }
 
 .panel-viewcontainer {
@@ -116,8 +143,6 @@ sidebar-panel-header {
   max-width: var(--sb-width) !important;
   z-index: 10 !important;
   border-right: 1px solid var(--tea) !important;
-
-  /* hidden state */
   transform: translateX(-100%) !important;
   visibility: hidden !important;
   will-change: transform;
@@ -148,7 +173,9 @@ sidebar-panel-header {
   background: var(--cream) !important;
 }
 
-#sidebar-splitter { display: none !important; }
+#sidebar-splitter {
+  display: none !important;
+}
 
 #navigator-toolbox,
 #browser {
@@ -166,7 +193,6 @@ sidebar-panel-header {
   font-family: "Nunito", system-ui, sans-serif !important;
 }
 
-/* Fullscreen: remove the reserved space and background */
 #main-window[inFullscreen] #navigator-toolbox {
   margin-left: 0 !important;
   background-color: transparent !important;
@@ -176,15 +202,8 @@ sidebar-panel-header {
   margin-left: 0 !important;
 }
 
-#main-window[inFullscreen] #TabsToolbar {
-  display: none !important;
-}
-
-/* Hide the sidebar strip too, so nothing sits over the page */
-#main-window[inFullscreen] #sidebar-container {
-  display: none !important;
-}
-
+#main-window[inFullscreen] #TabsToolbar,
+#main-window[inFullscreen] #sidebar-container,
 #main-window[inFullscreen] #sidebar-box {
   display: none !important;
 }

@@ -2,7 +2,7 @@ vim.cmd("highlight clear")
 if vim.fn.exists("syntax_on") == 1 then vim.cmd("syntax reset") end
 vim.g.colors_name = "milktea"
 
-local p = require("milktea.palette")
+local p = require("milktea.palette")()
 
 local set = vim.api.nvim_set_hl
 
@@ -97,3 +97,11 @@ set(0, "NoiceCmdlineCursor",           { bg = p.plum })
 
 -- Buffer
 set(0, "EndOfBuffer", { fg = p.foam, bg = "NONE" })
+
+if package.loaded["lualine"] then
+  package.loaded["milktea.lualine"] = nil
+  local lualine = require("lualine")
+  local config = lualine.get_config()
+  config.options.theme = require("milktea.lualine")
+  lualine.setup(config)
+end

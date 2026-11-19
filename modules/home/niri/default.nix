@@ -12,6 +12,6 @@ in
   config = lib.mkIf cfg.enable {
     services.awww.enable = true;
     xdg.configFile."niri/config.kdl".source = config.util.link "/dotfiles/niri/config.kdl";
-    xdg.configFile."niri/backgrounds".source = config.util.link "/dotfiles/backgrounds";
+    home.file."wallpapers".source = config.util.link "/dotfiles/wallpapers";
   };
 }

@@ -1,4 +1,4 @@
-spawn-sh-at-startup "awww img /home/Stelare/.config/niri/backgrounds/background.jpg"
+spawn-at-startup "awww-daemon" "--no-cache"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"

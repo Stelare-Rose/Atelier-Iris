@@ -12,6 +12,29 @@ vim.g.clipboard = {
   cache_enabled = 0,
 }
 vim.opt.clipboard = "unnamedplus"
+vim.opt.fillchars:append({ eob = " " })
+vim.api.nvim_create_autocmd("OptionSet", {
+  pattern = "background",
+  callback = function()
+    if vim.g.colors_name then
+      vim.cmd.colorscheme(vim.g.colors_name)
+    end
+  end,
+})
+local function apply_system_appearance()
+  local result = vim.fn.system({ 'dconf', 'read', '/org/gnome/desktop/interface/color-scheme' })
+  vim.o.background = result:find('prefer%-dark') and 'dark' or 'light'
+end
+
+apply_system_appearance()
+
+vim.api.nvim_create_autocmd('Signal', {
+  pattern = 'SIGUSR1',
+  callback = function()
+    apply_system_appearance()
+    vim.cmd('redraw!')
+  end,
+})
 
 local latte = require("catppuccin.palettes").get_palette "latte"
 

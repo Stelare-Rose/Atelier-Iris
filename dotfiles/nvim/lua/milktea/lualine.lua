@@ -1,4 +1,4 @@
-local p = require("milktea.palette")
+local p = require("milktea.palette")()
 local theme = {
   normal = {
     a = { fg = p.foam, bg = p.strawberry, gui = "bold" },
