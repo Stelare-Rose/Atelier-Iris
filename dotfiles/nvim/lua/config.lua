@@ -57,13 +57,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "kotlin",
-  callback = function()
-    vim.bo.equalprg = "(ktlint --format --stdin --log-level=none 2>/dev/null)"
-  end,
-})
-
 require("noice").setup({
 	lsp = {
 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -272,8 +265,9 @@ require("conform").setup({
     html = { "prettier" },
     json = { "prettier" },
     markdown = { "prettier" },
+    kotlin = { "ktlint" },
   },
-  format_on_save = { timeout_ms = 1000, lsp_format = "fallback" },
+  format_on_save = { timeout_ms = 3000, lsp_format = "fallback" },
 })
 vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true }, })
 require("flutter-tools").setup{}

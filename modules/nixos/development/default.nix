@@ -30,6 +30,10 @@ in
           configOptions = {
             "fastboot.forceColdBoot"="yes";
             "hw.keyboard"="yes";
+
+            "showDeviceFrame" = "no";
+            "hw.gpu.enabled" = "yes";
+            "hw.gpu.mode" = "host";
           };
         }) 
       ];
