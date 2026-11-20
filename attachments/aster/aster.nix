@@ -31,24 +31,28 @@ let
   aster = pkgs.symlinkJoin {
     name = "aster";
     paths = [ librewolfWrapped ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
-      if [ -f $out/bin/librewolf ]; then
-        real_bin=$(readlink -f $out/bin/librewolf)
-        rm $out/bin/librewolf
-        ln -s "$real_bin" $out/bin/aster
+    if [ -f $out/bin/librewolf ]; then
+      real_bin=$(readlink -f $out/bin/librewolf)
+      rm $out/bin/librewolf
+      makeWrapper "$real_bin" $out/bin/aster \
+      --add-flags "--name aster --class Aster"
+    fi
+
+    for desktop in $out/share/applications/*.desktop; do
+      if [ -f "$desktop" ]; then
+        target=$(readlink -f "$desktop")
+        rm "$desktop"
+        cp "$target" "$desktop"
+        chmod +w "$desktop"
+        substituteInPlace "$desktop" \
+        --replace-fail "Exec=librewolf" "Exec=aster" \
+        --replace-fail "Name=LibreWolf" "Name=Aster"
+        echo "StartupWMClass=Aster" >> "$desktop"
       fi
-      
-      for desktop in $out/share/applications/*.desktop; do
-        if [ -f "$desktop" ]; then
-          target=$(readlink -f "$desktop")
-          rm "$desktop"
-          cp "$target" "$desktop"
-          chmod +w "$desktop"
-          substituteInPlace "$desktop" \
-            --replace "Exec=librewolf" "Exec=aster" \
-            --replace "Name=LibreWolf" "Name=Aster"
-        fi
-      done    '';
+    done
+    '';
   };
 in
-aster
+  aster
