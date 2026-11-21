@@ -1,3 +1,4 @@
+# This file was written by AI
 { pkgs, ... }:
 let
   librewolfWrapped = pkgs.wrapFirefox pkgs.librewolf-unwrapped {

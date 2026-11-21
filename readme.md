@@ -1,7 +1,11 @@
 # Atelier-Iris
 > Part of the Atelier (codename for personal usage) set of projects!  
 > NixOS Configuration managing 3 machines, built with flakes and home-manager.  
-> Note that the configuration for Copernicus is currently work in progress.
+
+> [!NOTE]
+>
+> | [AI:R](http://0rwx.com) | AI:R I've used AI for research, however code is written by me unless marked in the file |
+> | ----------------------- | ------------------------------------------------------------------------------------------------ |
 ## Overview
 This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab server (#Copernicus). Note that the names of each machine relate to words related to the moon. It also includes configuration settings for VM use with `build-vm` and `build-vm-with-bootloader` using the #Nyx flake. This configuration is focused on creating reusable modules that can be shared across devices, allowing for convenient reproducibility for current and future devices. This configuration also uses [sops-nix](https://github.com/Mic92/sops-nix) to allow for secrets to be committed to git and shared across devices.
 
@@ -18,8 +22,9 @@ This configuration manages my desktop (#Selene), laptop (#Crescent), and homelab
         - users/...
         - default.nix
         - hardware.nix
-    - copernicus/ (WIP!)
+    - copernicus/
         - users/...
+        - services/...
         - default.nix
         - hardware.nix
     - nyx/
