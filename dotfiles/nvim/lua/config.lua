@@ -318,6 +318,9 @@ vim.lsp.config('jdtls', {
     },
   },
 })
+vim.lsp.config('kotlin_lsp', {
+  cmd = { 'kotlin-lsp', '--stdio' },
+})
 vim.lsp.enable('qmlls')
 vim.lsp.enable("emmet_language_server")
 vim.lsp.enable("csharp_ls")
@@ -333,7 +336,7 @@ vim.lsp.enable('jdtls')
 vim.lsp.enable('dartls')
 vim.lsp.enable('svelte')
 vim.lsp.enable('rust_analyzer')
-vim.lsp.enable('kotlin_language_server')
+vim.lsp.enable('kotlin_lsp')
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
